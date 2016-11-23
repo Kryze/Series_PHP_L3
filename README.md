@@ -13,9 +13,9 @@ Utiliser la commande composer install
 Ajouter C:\wamp64\bin\php\php7.0.10 a la variable PATH d'environnement
 (Si c'est pas wamp le dossier ou se trouve php7.0.10)
 
-Renommer en console .env.exemple en .env
-(Sous windows move .env.exemple .env)
-(Sous linux mv .env.exemple .env)
+Renommer en console .env.example en .env
+(Sous windows move .env.example .env)
+(Sous linux mv .env.example .env)
 
 Utiliser les commandes
 php artisan key:generate
