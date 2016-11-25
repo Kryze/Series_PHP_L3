@@ -1,0 +1,5 @@
+Pour ajouter des route il faut aller dans le fichier routes/web.php
+
+Pour ajouter des vue il faut aller dans ressources/views/ et les ajouter dans ce dossier
+
+
