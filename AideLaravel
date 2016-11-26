@@ -1,0 +1,51 @@
+Dossiers :
+    App \ Contient tout ce qui est controleur, services, filtres, commandes, et classes personnalisées (logique de l'application)
+    Bootstrap \ Voilà
+    Config \ On gère ici la configuration (database,mail,session...)
+    Database \ Voilà
+    Public \ Ce qu'on va manipuler manuellement (CSS,JS,images...)
+    Ressources \ On y place ici les vues, localisation de fichiers..
+    Routes \ Très important, on place TOUTES les routes ici
+    Storage \ On y enregistre les sessions, caches, templates...
+    Tests \ Voilà
+    Vendor \ Dépendances...
+
+------------------------------------------------------------------------------------------------------------------------------
+routes
+    web.php \ on veut modifier un chemin(url), ou la vue auquel il accède.
+
+vues
+    views \ Se situe dans ressources, une page est en php (ou html), et elle contient le code html
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Controllers
+    Actions des utilisateurs dans UserController, et toute les actions des posts dans PostController
+
+Si on veut utiliser plusieurs pages par exemple, ce qui serait logique, il nous faut créé un PagesController
+Deux manières, manuellement, ou automatiquement avec artisan
+
+Manuellement, on créé un PagesController.php, directement dans app/Http/Controllers (elle extend Controller)
+Elle contient une méthode qui retourne la vue associé à la méthode de la page (par exemple function home, retournera vue home)
+
+Automatiquement, 'php artisan make:controller PagesController'
+La classe ne sera pas complète(aucune méthode)
+
+Pour l'utiliser, il faut ensuite créé une route dans le web.php de cette manière :
+Route::get('/', 'PagesController@home');
+Ou le @home représente la méthode home
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+BOOTSTRAP
+Tu veux mettre bootstrap sur ta page ? Ajoute :
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" >
+<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+<script src="/js/jquery-3.1.0.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Maitenant, il ne reste plus que à coder ?
+
