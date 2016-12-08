@@ -1,40 +1,33 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="/Series_PHP_L3/resources/assets/js/jquery-3.1.1.js"></script>
-    <script type="text/javascript" src="/Series_PHP_L3/resources/assets/js/bootstrap.js"></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="/Series_PHP_L3/resources/assets/css/style.css" rel="stylesheet" type="text/css">
-</head><body>
-<div class="navbar navbar-default navbar-static-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand"><span>ShowTracker</span></a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active">
-                    <a href="#">Inscription</a>
-                </li>
+<?php
 
-                <li class="active">
-                    <a href="#">Connexion</a>
-                </li>
-            </ul>
-        </div>
+require_once('C:\wamp64\www\Series_PHP_L3\resources\views\GlobalView.php');
+
+$htmlHead=\biblio\vue\GlobalView::renderHead();
+$htmlNav=\biblio\vue\GlobalView::renderNav();
+$htmlPresentation='
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <h3>Projet Web L3 Miage</h3>
+                <div class="col-lg-8">
+                </div>
+                <div class="col-lg-4">
+                    <h1 id="titre">Toutes les séries à dispositions</h1>
+                </div>
+             </div>
+             <div class="row">
+                    <div class="saut_ligne">
+                        <a class="btn btn-lg btn-warning" href="https://lmgtfy.com/?q=Comment+cr%C3%A9e+une+page+d%27inscription+html%5Ccss+%3A3" title="Troll">Regarder des séries</a>
+                    </div>
+             </div>
+         </div>
     </div>
-</div>
+';
+$htmlCorps='
 <div class="section">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 text-left">
+            <div class="col-md-12 col-lg-12 text-left">
                 <div id="carousel-example" data-interval="5000" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="item active">
@@ -55,7 +48,7 @@
                             <img src="/Series_PHP_L3/resources/assets/img/12monkeys.jpg">
                             <div class="carousel-caption">
                                 <h2>12 Monkeys</h2>
-                                <p>C'est le passé ou le présent ou le futur ?</p>
+                                <p>C\'est le passé ou le présent ou le futur ?</p>
                             </div>
                         </div>
                     </div>
@@ -63,21 +56,13 @@
                     <a class="right carousel-control" href="#carousel-example" data-slide="next"><i class="icon-next fa fa-angle-right"></i></a>
                 </div>
                 <h1 class="text-center">Bienvenue sur ShowTracker</h1>
-                <p class="text-center">Afin de profiter entièrment de l'expérience de ShowTracker, merci de
+                <p class="text-center">Afin de profiter entièrment de l\'expérience de ShowTracker, merci de
                     créer un compte ou de vous connecter</p>
             </div>
         </div>
     </div>
-</div>
-
-
-</body></html>
-
-<?php
-/**
- * Created by PhpStorm.
- * User: rudy
- * Date: 23/11/16
- * Time: 19:17
- */
-
+</div>';
+$htmlFooter=\biblio\vue\GlobalView::renderFooter();
+//ajouter $htmlCorps pour l'affichage du carousel et $htmlNav pour la barre de navigation
+$html=$htmlHead.$htmlPresentation.$htmlFooter;
+echo $html;

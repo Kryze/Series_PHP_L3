@@ -1,0 +1,28 @@
+#image_Ecran {
+    background-image:url('../img/la_haut.jpg');
+    background-size: cover;
+    margin: 0;
+}
+
+.footer {
+    background-color: rgba(0, 0, 255, 0.5);
+}
+
+#titre {
+    margin-top: 30%;
+    color: white;
+    border: 5px solid #fff;
+    padding: 5px;
+}
+
+h3 {
+    color:white;
+}
+
+#titre:hover {
+    border: 5px solid orange;
+}
+
+.saut_ligne {
+    margin-top: 15%;
+}
