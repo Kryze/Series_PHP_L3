@@ -62,7 +62,8 @@
                     <a class="left carousel-control" href="#carousel-example" data-slide="prev"><i class="icon-prev  fa fa-angle-left"></i></a>
                     <a class="right carousel-control" href="#carousel-example" data-slide="next"><i class="icon-next fa fa-angle-right"></i></a>
                 </div>
-                <h1 class="text-center">Bienvenue sur ShowTracker</h1>
+                <h1 class="text-center">ShowTracker</h1>
+                <h4 class="text-center"> Regardez les séries télévisées <b> Autrement </b> </h4>
                 <p class="text-center">Afin de profiter entièrment de l'expérience de ShowTracker, merci de
                     créer un compte ou de vous connecter</p>
             </div>
