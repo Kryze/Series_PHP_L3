@@ -2,8 +2,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="/Series_PHP_L3/resources/assets/js/jquery-3.1.1.js"></script>
-    <script type="text/javascript" src="/Series_PHP_L3/resources/assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/jquery-3.1.1.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/bootstrap.js') }}"></script>
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="/Series_PHP_L3/resources/assets/css/style.css" rel="stylesheet" type="text/css">
 </head><body>
@@ -21,11 +21,7 @@
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="active">
-                    <a href="#">Inscription</a>
-                </li>
-
-                <li class="active">
-                    <a href="#">Connexion</a>
+                    <a href="{{ url('inscription') }}">Inscription/Connexion</a>
                 </li>
             </ul>
         </div>
