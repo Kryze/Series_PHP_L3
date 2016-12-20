@@ -20,17 +20,34 @@ class GlobalView
     public static function renderHead()
     {
         return '
-        <!DOCTYPE html>
-            <html>
-                <head>
-                    <meta charset="utf-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1">
-                    <link rel="stylesheet" type="text/css" href="/Series_PHP_L3/resources/assets/css/bootstrap.min.css">
-                    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-                    <link href="/Series_PHP_L3/resources/assets/css/style.css" rel="stylesheet" type="text/css">
-                    <link href="/Series_PHP_L3/resources/assets/css/siteCss.css" rel="stylesheet" type="text/css">
-                </head>
-        <body id="image_Ecran">' . self::$rtcarret;
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Accueil</title>
+        <link href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/css/font-awesome.css" rel="stylesheet"/>
+        <script type="text/javascript" src="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/js/jquery.min.js"></script>
+    </head>
+    <body role="document">
+        ' . self::$rtcarret;
+    }
+
+    public static function renderClassHead($class){
+        return '
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Accueil</title>
+        <link href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/css/font-awesome.css" rel="stylesheet"/>
+        <script type="text/javascript" src="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/js/jquery.min.js"></script>
+    </head>
+    <body role="document" class="'.$class.'">
+        ' . self::$rtcarret;
     }
 
     /**
@@ -41,30 +58,126 @@ class GlobalView
     public static function renderNav()
     {
         return '
-    <div class="navbar navbar-default navbar-static-top">
-    <div class="container">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand"><span>ShowTracker</span></a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Ouvrir</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/">BIBPERSO</a>
         </div>
-        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active">
-                    <a href="#">Inscription</a>
-                </li>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-book"></i>&nbsp; Bibliotheques <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/all/biblio">Afficher les bibliotheques</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/ajouter/biblio">Ajouter une bibliotheque</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-book"></i>&nbsp; Livres <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/all/livres">Afficher les livres</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/ajouter/livres">Ajouter un livre</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/rechercher/livres">Chercher un livre</a></li>
+                 <li role="separator" class="divider"></li>
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/livresfav">Livres favoris</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/livrespret">Livres prêtés</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-film"></i>&nbsp; Films <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/all/films">Afficher les films</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/ajouter/films">Ajouter un film</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/rechercher/films">Chercher un film</a></li>
+                 <li role="separator" class="divider"></li>
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/filmsfav">Films favoris</a></li>
+                 <li role="separator" class="divider"></li>
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/filmspret">Films prêtés</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-music"></i>&nbsp; Albums Musicaux <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/all/albums">Afficher les Albums</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/ajouter/album">Ajouter un Album</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/rechercher/albums">Chercher un album</a></li>
+                 <li role="separator" class="divider"></li>
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/albumsfav">Albums favoris</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/albumspret">Albums prêtés</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gamepad"></i>&nbsp; Jeux Vidéos <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/all/jeux">Afficher les Jeux</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/ajouter/jeux">Ajouter un Jeu</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/rechercher/jeux">Chercher un jeu</a></li>
+                 <li role="separator" class="divider"></li>
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/jeuxfav">Jeux favoris</a></li>
+                 <li role="separator" class="divider"></li>
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/index.php/jeuxpret">Jeux prêtés</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i>&nbsp; Votre compte <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/deconnexion">Deconnexion</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <div class="container theme-showcase" role="main">
+        ' . self::$rtcarret;
+    }
 
-                <li class="active">
-                    <a href="#">Connexion</a>
-                </li>
-            </ul>
+    public static function renderNavDisconnected(){
+        return '
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Ouvrir</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/">BIBPERSO</a>
         </div>
-    </div>
-</div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i>&nbsp; Votre compte <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/inscription">Inscription</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/connexion">Connexion</a></li>
+
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <div class="container theme-showcase" role="main">
         ' . self::$rtcarret;
     }
 
@@ -75,14 +188,30 @@ class GlobalView
      */
     public static function renderFooter(){
         return '
-    </body>
+        </div>
         <footer class="footer">
             <div class="container-foot">
+                <p class="text-muted-foot">Copyright &copy; 2016 - Corentin Legris, Benjamin Denys, Cyprien Aubry, Thomas Osty - S3C</p>
             </div>
         </footer>
-        <script type="text/javascript" src="/Series_PHP_L3/resources/assets/js/jquery-3.1.1.js"></script>
-        <script type="text/javascript" src="/Series_PHP_L3/resources/assets/js/bootstrap.js"></script>
-        <script type="text/javascript" src="/Series_PHP_L3/resources/assets/js/boostrap.min.js""></script>
-    </html>';
+        <script type="text/javascript" src="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/js/bootstrap.min.js"></script>
+        </body>
+    </html>
+        ';
+    }
+
+    public static function renderFooterBug(){
+        return '
+        </div>
+        <footer class="footer bug">
+            <div class="container-foot">
+                <p class="text-muted-foot">Copyright &copy; 2016 - Corentin Legris, Benjamin Denys, Cyprien Aubry, Thomas Osty - S3C</p>
+            </div>
+        </footer>
+        <script type="text/javascript" src="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://127.0.0.1/s3c_s2_aubry_denys_legris_osty/js/main.js"
+        </body>
+    </html>
+        ';
     }
 }
