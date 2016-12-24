@@ -16,3 +16,6 @@ Route::get('/', function () {
     return view('propre');
 });
 
+Route::get('/inscription', function () {
+    return view('inscription');
+});

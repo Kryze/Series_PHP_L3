@@ -1,13 +1,19 @@
 @extends('layouts.test')
 @section('head')
-@section('title', 'Page Title')
-
+    @parent
+@endsection
 @section('sidebar')
     @parent
 @endsection
 @section('bodyaccueil')
     @parent
-    @endsection
+@endsection
+@section('carousel')
+    @parent
+@endsection
 @section('footer')
     @parent
 @endsection
+@section('inscription')
+@endsection
+
