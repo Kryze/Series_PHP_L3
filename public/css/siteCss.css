@@ -1,5 +1,9 @@
 #image_Ecran{
-    background-image:url("../img/la_haut.jpg");
+    background: url("../img/blur.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .section{
@@ -17,4 +21,13 @@
 
 #titre{
     text-align: center;
+}
+
+.ins{
+    margin-top:15px;
+    font-weight: 800;
+}
+
+input{
+    border: lightgray solid 2px;
 }

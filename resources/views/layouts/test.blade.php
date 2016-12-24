@@ -76,22 +76,22 @@
     <div class="section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4 block">
+                <div class="col-lg-9 col-md-9 block">
                     <h2>Connexion</h2>
                     <form method="post" action="/">
-                        <p> Nom d\'utilisateur : <input type="text" name="utilisateur"/> </p>
-                        <p> Mot de passe : <input type="password" name="mdp"/> </p>
-                        <p class="text-center"> <input class="btn btn-md btn-warning" type="submit" name="connexion" value="Se connecter"/></p>
+                        <p class="ins"> Nom d'utilisateur :</p> <input type="text" name="utilisateur"/>
+                        <p class="ins"> Mot de passe : </p> <input type="password" name="mdp"/>
+                        <p class="ins"> <input class="btn btn-md btn-primary" type="submit" name="connexion" value="Se connecter"/></p>
                     </form>
                 </div>
-                <div class="col-lg-4 col-md-4 block">
+                <div class="col-lg-3 col-md-3 block">
                     <h2>Inscription</h2>
                     <form method="post" action="/">
-                        <p> Nom d\'utilisateur : <input type="text" name="utilisateur"/> </p>
-                        <p> Mot de passe : <input type="password" name="mdp"/> </p>
-                        <p> Verifier mot de passe : <input type="password" name="mdp2"/> </p>
-                        <p> Adresse : <input type="text" name="adresse"/> </p>
-                        <p class="text-center"> <input class="btn btn-md btn-warning" type="submit" name="connexion" value="S\'inscrire"/></p>
+                        <p class="ins"> Nom d'utilisateur :</p> <input type="text" name="utilisateur"/>
+                        <p class="ins"> Mot de passe :</p> <input type="password" name="mdp"/>
+                        <p class="ins"> Verifier mot de passe :</p> <input type="password" name="mdp2"/>
+                        <p class="ins"> Adresse :</p> <input type="text" name="adresse"/>
+                        <p class="ins"> <input class="btn btn-md btn-primary" type="submit" name="connexion" value="S'inscrire"/></p>
                     </form>
                 </div>
             </div>
