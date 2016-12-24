@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,8 +13,6 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('propre');
 });
-Route::get('/inscription', function () {
-    return view('inscription');
-});
+
