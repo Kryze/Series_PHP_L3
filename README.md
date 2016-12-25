@@ -2,7 +2,7 @@ Series_PHP_L3
 
 Projet de programmation web/web dynamique de L3 MIAGE
 
-Avant de suivre le tutoriel il faut
+## Avant de suivre le tutoriel il faut
 
   Réinstaller composer en version php7.0.10
 
@@ -22,7 +22,7 @@ Avant de suivre le tutoriel il faut
 
 
 
-Mon installation qui fonctionne directement avec WAMP 
+## Mon installation qui fonctionne directement avec WAMP 
 
 J'utilise wampserver64 et github desktop (pour pull le projet)
 
