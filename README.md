@@ -11,6 +11,17 @@ Avant de suivre le tutoriel il faut
   Ajouter C:\wamp64\bin\php\php7.0.10 a la variable PATH d'environnement (Si c'est pas wamp le dossier ou se trouve php7.0.10)
 
 
+
+
+
+
+
+
+
+
+
+
+
 Mon installation qui fonctionne directement avec WAMP 
 
 J'utilise wampserver64 et github desktop (pour pull le projet)
