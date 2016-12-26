@@ -19,3 +19,7 @@ Route::get('/', function () {
 Route::get('/inscription', function () {
     return view('inscription');
 });
+
+Route::get('/home', function(){
+    return view('home');
+});
