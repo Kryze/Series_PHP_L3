@@ -1,5 +1,5 @@
 #image_Ecran{
-    background: url("../img/blur.jpg") no-repeat center center fixed;
+    background: url("../img/la_haut.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -30,4 +30,17 @@
 
 input{
     border: lightgray solid 2px;
+}
+
+
+
+/**** HOME *****/
+
+.serie{
+    display: inline-block;
+    margin: 5px;
+}
+
+.serie:hover{
+    opacity: 0.6;
 }
