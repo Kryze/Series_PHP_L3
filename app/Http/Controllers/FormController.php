@@ -52,10 +52,21 @@ class FormController extends Controller
         }
 
         if($valid){
-          DB::insert('insert into users (name, password, email) values (?, ?, ?)', [$login, $pwd, $email]);
-          $_SESSION['login'] = $login;
-          $_SESSION['email'] = $email;
-          return view('home');
+          $users = DB::table('users')
+                     ->select('name')
+                     ->where('name', '=', $login)
+                     ->first();
+          if(!isset($users)){
+            $id = DB::table('users')->insertGetId(
+              ['name' => $login, 'password' => $cryptedPw, 'email' => $email]
+            );
+            $_SESSION['id'] = $id;
+            $_SESSION['login'] = $login;
+            $_SESSION['email'] = $email;
+            return view('home');
+          }else{
+            return view('inscription');
+          }
         }else{
           return view('inscription');
         }
