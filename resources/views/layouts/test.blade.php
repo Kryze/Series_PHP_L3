@@ -76,10 +76,11 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 block">
                     <h2>Connexion</h2>
-                    <form method="post" action="">
+                    <form method="post" action="./auth">
                         <p> Nom d'utilisateur : <input type="text" name="login"/> </p>
                         <p> Mot de passe : <input type="password" name="mdp"/> </p>
                         <p class="text-center"> <input class="btn btn-md btn-warning" type="submit" name="connexion" value="Se connecter"/></p>
+                        <input name="_token" type="hidden" value="{{ csrf_token() }}">
                     </form>
                 </div>
                 <div class="col-lg-4 col-md-4 block">

@@ -20,6 +20,8 @@ Route::get('/inscription', 'FormController@index');
 
 Route::post('/confirm', 'FormController@confirm');
 
+Route::post('/auth', 'FormController@auth');
+
 Route::get('/home', 'HomeController@index');
 
 Route::get('/recherche', 'SearchController@index');

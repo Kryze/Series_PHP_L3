@@ -1,6 +1,6 @@
 <?php
 
-namespace projet\models;
+namespace App;
 
 class SeasonsEpisodes extends \Illuminate\Database\Eloquent\Model {
 	protected $table ='seasonsepisodes';

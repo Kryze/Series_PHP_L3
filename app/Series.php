@@ -1,6 +1,6 @@
 <?php
 
-namespace projet\models;
+namespace App;
 
 class Series extends \Illuminate\Database\Eloquent\Model {
 	protected $table ='series';

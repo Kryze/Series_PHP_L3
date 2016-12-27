@@ -20,6 +20,26 @@ class FormController extends Controller
         return view('inscription');
     }
 
+    public function auth()
+    {
+      if(isset($_POST['login']) && isset($_POST['mdp'])){
+        $users = DB::table('users')
+                   ->select('id', 'name', 'email')
+                   ->where([
+                        ['name', '=', $_POST['login']],
+                        ['password', '=', $_POST['mdp']]
+                    ])->first();
+        if(isset($users)){
+          $_SESSION['id'] = $users->id;
+          $_SESSION['login'] = $users->name;
+          $_SESSION['email'] = $users->email;
+          return view('home');
+        }else{
+          return view('inscription');
+        }
+      }
+    }
+
     public function confirm()
     {
       $message = '';
@@ -58,7 +78,7 @@ class FormController extends Controller
                      ->first();
           if(!isset($users)){
             $id = DB::table('users')->insertGetId(
-              ['name' => $login, 'password' => $cryptedPw, 'email' => $email]
+              ['name' => $login, 'password' => $pwd, 'email' => $email]
             );
             $_SESSION['id'] = $id;
             $_SESSION['login'] = $login;
