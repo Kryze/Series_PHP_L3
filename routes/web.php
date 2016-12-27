@@ -22,7 +22,7 @@ Route::get('/inscription', function () {
 
 Route::get('/home', 'HomeController@index');
 
-Route::post('/recherche', 'SearchController@index');
+Route::get('/recherche', 'SearchController@index');
 
 
 Route::group(['prefix' => 'fiche'], function(){

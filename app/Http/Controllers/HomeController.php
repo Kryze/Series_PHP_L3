@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $infoSeries = DB::table('series')->select('*')->orderBy('popularity', 'desc')->take(20)->get();
+        $infoSeries = DB::table('series')->select('*')->orderBy('popularity', 'desc')->take(21)->get();
         return view('home', ['infoSeries' => $infoSeries]);
     }
 }
