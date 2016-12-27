@@ -16,9 +16,9 @@ Route::get('/', function () {
     return view('propre');
 });
 
-Route::get('/inscription', function () {
-    return view('inscription');
-});
+Route::get('/inscription', 'FormController@index');
+
+Route::post('/confirm', 'FormController@confirm');
 
 Route::get('/home', 'HomeController@index');
 

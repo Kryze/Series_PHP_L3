@@ -76,20 +76,21 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 block">
                     <h2>Connexion</h2>
-                    <form method="post" action="/">
-                        <p> Nom d'utilisateur : <input type="text" name="utilisateur"/> </p>
+                    <form method="post" action="">
+                        <p> Nom d'utilisateur : <input type="text" name="login"/> </p>
                         <p> Mot de passe : <input type="password" name="mdp"/> </p>
                         <p class="text-center"> <input class="btn btn-md btn-warning" type="submit" name="connexion" value="Se connecter"/></p>
                     </form>
                 </div>
                 <div class="col-lg-4 col-md-4 block">
                     <h2>Inscription</h2>
-                    <form method="post" action="/">
-                        <p> Nom d'utilisateur : <input type="text" name="utilisateur"/> </p>
-                        <p> Mot de passe : <input type="password" name="mdp"/> </p>
-                        <p> Verifier mot de passe : <input type="password" name="mdp2"/> </p>
-                        <p> Adresse : <input type="text" name="adresse"/> </p>
-                        <p class="text-center"> <input class="btn btn-md btn-warning" type="submit" name="connexion" value="S'inscrire"/></p>
+                    <form method="post" action="./confirm">
+                        <p> Nom d'utilisateur : <input type="text" name="login"/> </p>
+                        <p> Mot de passe : <input type="password" name="pwd"/> </p>
+                        <p> Verifier mot de passe : <input type="password" name="pwd2"/> </p>
+                        <p> Adresse : <input type="text" name="email"/> </p>
+                        <p class="text-center"> <input class="btn btn-md btn-warning" type="submit" name="connexion" value="Inscription"/></p>
+                        <input name="_token" type="hidden" value="{{ csrf_token() }}">
                     </form>
                 </div>
             </div>
