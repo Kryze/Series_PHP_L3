@@ -20,6 +20,15 @@ Route::get('/inscription', function () {
     return view('inscription');
 });
 
-Route::get('/home', function(){
-    return view('home');
+Route::get('/home', 'HomeController@index');
+
+Route::post('/recherche', 'SearchController@index');
+
+
+Route::group(['prefix' => 'fiche'], function(){
+
+    Route::get('/{id}', function($id){
+        return view('ficheSerie', $id);
+    });
+
 });
