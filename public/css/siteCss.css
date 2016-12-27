@@ -4,6 +4,9 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-image:url('../img/la_haut.jpg');
+    background-size: cover;
+    margin: 0;
 }
 
 .section{
@@ -11,6 +14,9 @@
 }
 
 .navbar{
+    position: static;
+    border-bottom: solid 4px white;
+    box-shadow: 1px 1px 12px black;
 
 }
 
@@ -33,6 +39,46 @@ input{
 }
 
 
+.footer {
+    background-color: rgba(0, 0, 255, 0.5);
+}
+
+#titre {
+    margin-top: 30%;
+    color: white;
+    border: 5px solid #fff;
+    padding: 5px;
+}
+
+form {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: right;
+}
+
+.block {
+    margin-left: 10%;
+    box-shadow: 1px 1px 12px white;
+    text-align: center;
+    margin-top: 5%;
+    background-color : rgba(255, 255, 255,0.7);
+    border: black solid 3px;
+    border-radius: 10px;
+    color:black;
+}
+
+h3 {
+    color:white;
+}
+
+#titre:hover {
+    border: 5px solid orange;
+}
+
+.saut_ligne {
+    margin-top: 15%;
+}
+
 
 /**** HOME *****/
 
@@ -41,6 +87,6 @@ input{
     margin: 5px;
 }
 
-.serie:hover{
+.serie:hover {
     opacity: 0.6;
 }
