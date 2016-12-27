@@ -39,25 +39,23 @@
     <div class="section">
         <div class="container">
             <div class="row">
-                <h1 id="sectitre">L'actualité de vos series en temps réel</h1>
+                <h3>Projet Web L3 Miage</h3>
                 <div class="col-lg-8">
                 </div>
-               <div class="col-lg-12">
-               <img src="{{ URL::asset('img/westworld.jpg') }}" alt="Westworld"/>
-               </div>
-                <div class="col-lg-12">
-                    <h3 id="titre">Profitez d'une experience exceptionnel !</h3>
+                <div class="col-lg-4">
+                    <h1 id="titre">Toutes les séries à dispositions</h1>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-11">
+                <div class="saut_ligne">
                     <form method="get" action="{{ url('inscription') }}">
-                        <p class="text-center"> <input class="btn btn-lg btn-warning" type="submit" name="connexion" value="Démarrez l'aventure"/></p>
+                        <p class="text-left"> <input class="btn btn-lg btn-warning" type="submit" name="connexion" value="Regarder des séries"/></p>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
 @show
 </body>
 <footer class="footer">
@@ -76,22 +74,22 @@
     <div class="section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-9 col-md-9 block">
+                <div class="col-lg-4 col-md-4 block">
                     <h2>Connexion</h2>
                     <form method="post" action="/">
-                        <p class="ins"> Nom d'utilisateur :</p> <input type="text" name="utilisateur"/>
-                        <p class="ins"> Mot de passe : </p> <input type="password" name="mdp"/>
-                        <p class="ins"> <input class="btn btn-md btn-primary" type="submit" name="connexion" value="Se connecter"/></p>
+                        <p> Nom d'utilisateur : <input type="text" name="utilisateur"/> </p>
+                        <p> Mot de passe : <input type="password" name="mdp"/> </p>
+                        <p class="text-center"> <input class="btn btn-md btn-warning" type="submit" name="connexion" value="Se connecter"/></p>
                     </form>
                 </div>
-                <div class="col-lg-3 col-md-3 block">
+                <div class="col-lg-4 col-md-4 block">
                     <h2>Inscription</h2>
                     <form method="post" action="/">
-                        <p class="ins"> Nom d'utilisateur :</p> <input type="text" name="utilisateur"/>
-                        <p class="ins"> Mot de passe :</p> <input type="password" name="mdp"/>
-                        <p class="ins"> Verifier mot de passe :</p> <input type="password" name="mdp2"/>
-                        <p class="ins"> Adresse :</p> <input type="text" name="adresse"/>
-                        <p class="ins"> <input class="btn btn-md btn-primary" type="submit" name="connexion" value="S'inscrire"/></p>
+                        <p> Nom d'utilisateur : <input type="text" name="utilisateur"/> </p>
+                        <p> Mot de passe : <input type="password" name="mdp"/> </p>
+                        <p> Verifier mot de passe : <input type="password" name="mdp2"/> </p>
+                        <p> Adresse : <input type="text" name="adresse"/> </p>
+                        <p class="text-center"> <input class="btn btn-md btn-warning" type="submit" name="connexion" value="S'inscrire"/></p>
                     </form>
                 </div>
             </div>
