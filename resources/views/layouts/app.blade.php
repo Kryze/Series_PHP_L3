@@ -20,9 +20,9 @@
         ]); ?>
     </script>
 </head>
-<body>
+<body id="image_Ecran">
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
 

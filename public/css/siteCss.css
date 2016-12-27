@@ -14,19 +14,16 @@
 }
 
 .navbar{
-    position: static;
+    width: 100%;
     border-bottom: solid 4px white;
     box-shadow: 1px 1px 12px black;
-
+    height: 20px;
+    z-index: 999;
 }
 
 #sectitre{
     text-align: center;
 
-}
-
-#titre{
-    text-align: center;
 }
 
 .ins{
@@ -47,6 +44,13 @@ input{
     margin-top: 30%;
     color: white;
     border: 5px solid #fff;
+    padding: 5px;
+}
+
+#titre2 {
+    margin-top: 80px;
+    color: white;
+    margin-left: 20px;
     padding: 5px;
 }
 
