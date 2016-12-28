@@ -73,12 +73,14 @@
 @section('inscription')
     <div class="section">
         <div class="container">
+          @section('message')
+          @show
             <div class="row">
                 <div class="col-lg-4 col-md-4 block">
                     <h2>Connexion</h2>
                     <form method="post" action="./auth">
-                        <p> Nom d'utilisateur : <input type="text" name="login"/> </p>
-                        <p> Mot de passe : <input type="password" name="mdp"/> </p>
+                        <p> Nom d'utilisateur : <input type="text" name="login"required/> </p>
+                        <p> Mot de passe : <input type="password" name="mdp" required/> </p>
                         <p class="text-center"> <input class="btn btn-md btn-warning" type="submit" name="connexion" value="Se connecter"/></p>
                         <input name="_token" type="hidden" value="{{ csrf_token() }}">
                     </form>
@@ -86,10 +88,10 @@
                 <div class="col-lg-4 col-md-4 block">
                     <h2>Inscription</h2>
                     <form method="post" action="./confirm">
-                        <p> Nom d'utilisateur : <input type="text" name="login"/> </p>
-                        <p> Mot de passe : <input type="password" name="pwd"/> </p>
-                        <p> Verifier mot de passe : <input type="password" name="pwd2"/> </p>
-                        <p> Adresse : <input type="text" name="email"/> </p>
+                        <p> Nom d'utilisateur : <input type="text" name="login" required/> </p>
+                        <p> Mot de passe : <input type="password" name="pwd" required/> </p>
+                        <p> Verifier mot de passe : <input type="password" name="pwd2" required/> </p>
+                        <p> Adresse : <input type="text" name="email" required/> </p>
                         <p class="text-center"> <input class="btn btn-md btn-warning" type="submit" name="connexion" value="Inscription"/></p>
                         <input name="_token" type="hidden" value="{{ csrf_token() }}">
                     </form>

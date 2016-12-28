@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('propre');
 });
 
-Route::get('/inscription', 'FormController@index');
+Route::get('/inscription/{message?}', 'FormController@index');
 
 Route::post('/confirm', 'FormController@confirm');
 
