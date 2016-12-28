@@ -93,4 +93,10 @@ class FormController extends Controller
         }
 
     }
+
+    public function logout()
+    {
+      $_SESSION = array();
+      return view('inscription');
+    }
 }
