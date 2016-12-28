@@ -11,19 +11,24 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-
+session_start();
 Route::get('/', function () {
     return view('propre');
 });
 
-Route::get('/inscription', function () {
-    return view('inscription');
-});
+Route::get('/inscription/{message?}', 'FormController@index');
+
+Route::post('/confirm', 'FormController@confirm');
+
+Route::post('/auth', 'FormController@auth');
+
+Route::get('/logout', 'FormController@logout');
 
 Route::get('/home', 'HomeController@index');
 
 Route::get('/recherche', 'SearchController@index');
 
+Route::get('/fiche_serie', 'FicheController@fiche');
 
 Route::group(['prefix' => 'fiche'], function(){
 

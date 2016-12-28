@@ -7,10 +7,9 @@
 @endsection
 @section('bodyaccueil')
 @endsection
+@section('inscription')
+    @parent
+@endsection
 @section('footer')
     @parent
 @endsection
-@section('inscription')
-	@parent
-@endsection
-

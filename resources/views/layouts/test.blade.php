@@ -13,7 +13,7 @@
 @show
 <body id="image_Ecran">
 @section('sidebar')
-    <div class="navbar navbar-default navbar-static-top">
+    <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
@@ -57,43 +57,46 @@
     </div>
 
 @show
-</body>
-<footer class="footer">
-@section('footer')
-        <div class="container-foot">
-        </div>
-    </footer>
-    <script type="text/javascript" src="{{ URL::asset('js/jquery-3.1.1.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/bootstrap.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/boostrap.min.js') }}"></script>
-</footer>
-@show
-
-
 @section('inscription')
     <div class="section">
         <div class="container">
+            @section('message')
+            @show
             <div class="row">
                 <div class="col-lg-4 col-md-4 block">
                     <h2>Connexion</h2>
-                    <form method="post" action="/">
-                        <p> Nom d'utilisateur : <input type="text" name="utilisateur"/> </p>
-                        <p> Mot de passe : <input type="password" name="mdp"/> </p>
+                    <form method="post" action="./auth">
+                        <p> Nom d'utilisateur : <input type="text" name="login"required/> </p>
+                        <p> Mot de passe : <input type="password" name="mdp" required/> </p>
                         <p class="text-center"> <input class="btn btn-md btn-warning" type="submit" name="connexion" value="Se connecter"/></p>
+                        <input name="_token" type="hidden" value="{{ csrf_token() }}">
                     </form>
                 </div>
                 <div class="col-lg-4 col-md-4 block">
                     <h2>Inscription</h2>
-                    <form method="post" action="/">
-                        <p> Nom d'utilisateur : <input type="text" name="utilisateur"/> </p>
-                        <p> Mot de passe : <input type="password" name="mdp"/> </p>
-                        <p> Verifier mot de passe : <input type="password" name="mdp2"/> </p>
-                        <p> Adresse : <input type="text" name="adresse"/> </p>
-                        <p class="text-center"> <input class="btn btn-md btn-warning" type="submit" name="connexion" value="S'inscrire"/></p>
+                    <form method="post" action="./confirm">
+                        <p> Nom d'utilisateur : <input type="text" name="login" required/> </p>
+                        <p> Mot de passe : <input type="password" name="pwd" required/> </p>
+                        <p> Verifier mot de passe : <input type="password" name="pwd2" required/> </p>
+                        <p> Adresse : <input type="text" name="email" required/> </p>
+                        <p class="text-center"> <input class="btn btn-md btn-warning" type="submit" name="connexion" value="Inscription"/></p>
+                        <input name="_token" type="hidden" value="{{ csrf_token() }}">
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    @show
+@show
+</body>
+<footer class="footer">
+@section('footer')
+        <div class="container-foot">
+        </div>
+    <script type="text/javascript" src="{{ URL::asset('js/jquery-3.1.1.js') }}"></script>
+        <script type="text/javascript" src="{{ URL::asset('js/SiteJs.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/bootstrap.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/boostrap.min.js') }}"></script>
+</footer>
+@show
+
 </html>

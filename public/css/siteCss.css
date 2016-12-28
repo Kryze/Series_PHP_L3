@@ -14,10 +14,11 @@
 }
 
 .navbar{
-    position: static;
+    width: 100%;
     border-bottom: solid 4px white;
     box-shadow: 1px 1px 12px black;
-
+    height: 20px;
+    z-index: 999;
 }
 
 #sectitre{
@@ -25,13 +26,13 @@
 
 }
 
-#titre{
-    text-align: center;
-}
-
 .ins{
     margin-top:15px;
     font-weight: 800;
+}
+
+#afficher {
+    margin-bottom: 20px;
 }
 
 input{
@@ -50,21 +51,59 @@ input{
     padding: 5px;
 }
 
+#titre2 {
+    margin-top: 80px;
+    color: white;
+    margin-left: 20px;
+    padding: 5px;
+}
+
+#invisible {
+    display: none;
+}
+
+#titre3 {
+    margin-top: 80px;
+    color: black;
+    margin-left: 20px;
+    padding: 5px;
+}
+
 form {
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: right;
 }
 
+
 .block {
     margin-left: 10%;
     box-shadow: 1px 1px 12px white;
     text-align: center;
+    margin-top: 10%;
+    background-color : rgba(255, 255, 255,0.7);
+    border: black solid 3px;
+    border-radius: 10px;
+    color:black;
+}
+
+.miniimage {
+    height:50px;
+    box-shadow: 1px 1px 12px white;
+    border: black solid 3px;
+    border-radius: 10px;
+}
+
+.block2 {
+    margin-left: 10%;
+    box-shadow: 1px 1px 12px white;
     margin-top: 5%;
     background-color : rgba(255, 255, 255,0.7);
     border: black solid 3px;
     border-radius: 10px;
     color:black;
+    clear:both;
+    float: left;
 }
 
 h3 {
@@ -89,4 +128,44 @@ h3 {
 
 .serie:hover {
     opacity: 0.6;
+}
+
+.separation {
+    min-height: 150vh;
+    color: black;
+    border-right: solid black 4px;
+    box-shadow: 1px 1px 12px white;
+    background:url('../img/back.jpg') no-repeat center center fixed;
+}
+
+.labelserie{
+text-align:justify;
+font-weight:600;
+font-size:18px;
+    margin-left: 40%;
+    margin-top: 30px;
+}
+
+.ficheserie{
+font-weight:200;
+font-size:15px;
+}
+
+.ficheblock{
+    color: black;
+    padding: 10px;
+/**background:url('../img/back.jpg') no-repeat center center fixed;
+**/
+}
+
+.ficheblock img{
+width:250px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+.ficheblock h1{
+text-align:center;
+color:#1d2a4f;
 }
