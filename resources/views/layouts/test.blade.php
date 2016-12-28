@@ -57,24 +57,11 @@
     </div>
 
 @show
-</body>
-<footer class="footer">
-@section('footer')
-        <div class="container-foot">
-        </div>
-    </footer>
-    <script type="text/javascript" src="{{ URL::asset('js/jquery-3.1.1.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/bootstrap.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/boostrap.min.js') }}"></script>
-</footer>
-@show
-
-
 @section('inscription')
     <div class="section">
         <div class="container">
-          @section('message')
-          @show
+            @section('message')
+            @show
             <div class="row">
                 <div class="col-lg-4 col-md-4 block">
                     <h2>Connexion</h2>
@@ -99,5 +86,16 @@
             </div>
         </div>
     </div>
-    @show
+@show
+</body>
+<footer class="footer">
+@section('footer')
+        <div class="container-foot">
+        </div>
+    <script type="text/javascript" src="{{ URL::asset('js/jquery-3.1.1.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/bootstrap.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/boostrap.min.js') }}"></script>
+</footer>
+@show
+
 </html>

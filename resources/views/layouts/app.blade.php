@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+<html>
 <head>
+    <title>App Name - @yield('title')</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
-
-    <!-- Scripts -->
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/siteCss.css') }}">
+    <script src="{{ URL::asset('js/jquery-3.1.1.js') }}"></script>
+    <script src="{{ URL::asset('js/home.js') }}"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--<link href="'.$_SERVER['DOCUMENT_ROOT'].'/projetWebL3/css/siteCss.css" rel="stylesheet" type="text/css">-->
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
 </head>
+
 <body id="image_Ecran">
     <div id="app">
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -82,6 +80,13 @@
     </div>
 
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
+    <footer class="footer">
+        @section('footer')
+            <div class="container-foot">
+            </div>
+            <script type="text/javascript" src="{{ URL::asset('js/jquery-3.1.1.js') }}"></script>
+            <script type="text/javascript" src="{{ URL::asset('js/bootstrap.js') }}"></script>
+            <script type="text/javascript" src="{{ URL::asset('js/boostrap.min.js') }}"></script>
+    </footer>
 </body>
 </html>
