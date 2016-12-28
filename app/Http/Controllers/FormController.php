@@ -15,9 +15,9 @@ class FormController extends Controller
 
     }
 
-    public function index()
+    public function index($m ='')
     {
-        return view('inscription');
+        return view('inscription', ['message' => $m]);
     }
 
     public function auth()
@@ -33,9 +33,10 @@ class FormController extends Controller
           $_SESSION['id'] = $users->id;
           $_SESSION['login'] = $users->name;
           $_SESSION['email'] = $users->email;
-          return view('home');
+          return redirect()->action('HomeController@index');
         }else{
-          return view('inscription');
+          $message = 'Le nom d\'utilisateur et le mot de passe ne correspondent pas.';
+          return view('inscription', ['message' => $message]);
         }
       }
     }
@@ -46,26 +47,26 @@ class FormController extends Controller
       $valid = true;
       if(!isset($_POST['login']) || strlen($_POST['login']) < 4){
         $valid = false;
-        $message .= '<p class="error">Le nom d\'utilisateur est trop court.</p>';
+        $message .= 'Le nom d\'utilisateur est trop court.';
       }else{
         $login = $_POST['login'];
       }
 
       if(!isset($_POST['pwd'])){
           $valid = false;
-          $message .= '<p class="error">Le mot de passe doit être renseigné.</p>';
+          $message .= 'Le mot de passe doit être renseigné.';
       }else{
         $pwd = $_POST['pwd'];
       }
 
       if(!isset($_POST['pwd2']) || $pwd != $_POST['pwd2']){
           $valid = false;
-          $message .= '<p class="error">Les mots de passe doivent correspondre.</p>';
+          $message .= 'Les mots de passe doivent correspondre.';
       }
 
       if (!isset($_POST['email']) || !contains('@', $_POST['email']) || !contains('.', $_POST['email'])){
           $valid = false;
-          $message .= '<p class="error">L\'email entré est invalide.</p>';
+          $message .= 'L\'email entré est invalide.';
         }
         else{
           $email = $_POST['email'];
@@ -83,12 +84,12 @@ class FormController extends Controller
             $_SESSION['id'] = $id;
             $_SESSION['login'] = $login;
             $_SESSION['email'] = $email;
-            return view('home');
+            return redirect()->action('HomeController@index');
           }else{
-            return view('inscription');
+            return view('inscription', ['message' => $message]);
           }
         }else{
-          return view('inscription');
+          return view('inscription', ['message' => $message]);
         }
 
     }
