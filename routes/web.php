@@ -11,7 +11,7 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-
+session_start();
 Route::get('/', function () {
     return view('propre');
 });
@@ -21,6 +21,8 @@ Route::get('/inscription/{message?}', 'FormController@index');
 Route::post('/confirm', 'FormController@confirm');
 
 Route::post('/auth', 'FormController@auth');
+
+Route::post('/logout', 'FormController@logout');
 
 Route::get('/home', 'HomeController@index');
 
