@@ -53,10 +53,14 @@
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ $_SESSION['login'] }} <span class="caret"></span>
+                                <a href="#" /*class="dropdown-toggle" data-toggle="dropdown"*/ role="button" aria-expanded="false">
+                                    {{ $_SESSION['login'] }}
                                 </a>
 
+
+
+                                /*<span class="caret"></span>*/
+                                /*
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
                                         <a href="{{ url('/logout') }}"
@@ -70,6 +74,18 @@
                                         </form>
                                     </li>
                                 </ul>
+                                */
+                            </li>
+                            <li>
+                                <a href="{{ url('/logout') }}"
+                                    onclick="
+                                             document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ url('/logout') }}" method="GET" style="display: none;">
+                                    <input name="_token" type="hidden" value="{{ csrf_token() }}">
+                                </form>
                             </li>
                         @endif
                     </ul>

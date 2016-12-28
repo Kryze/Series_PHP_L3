@@ -22,7 +22,7 @@ Route::post('/confirm', 'FormController@confirm');
 
 Route::post('/auth', 'FormController@auth');
 
-Route::post('/logout', 'FormController@logout');
+Route::get('/logout', 'FormController@logout');
 
 Route::get('/home', 'HomeController@index');
 

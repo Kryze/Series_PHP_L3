@@ -96,7 +96,7 @@ class FormController extends Controller
 
     public function logout()
     {
-      session_destroy();
-      return view('propre');
+      $_SESSION = array();
+      return view('inscription');
     }
 }
