@@ -54,11 +54,19 @@ input{
     padding: 5px;
 }
 
+#titre3 {
+    margin-top: 80px;
+    color: black;
+    margin-left: 20px;
+    padding: 5px;
+}
+
 form {
     padding-top: 10px;
     padding-bottom: 10px;
     text-align: right;
 }
+
 
 .block {
     margin-left: 10%;
@@ -69,6 +77,18 @@ form {
     border: black solid 3px;
     border-radius: 10px;
     color:black;
+}
+
+.block2 {
+    margin-left: 10%;
+    box-shadow: 1px 1px 12px white;
+    float: left;
+    margin-top: 5%;
+    background-color : rgba(255, 255, 255,0.7);
+    border: black solid 3px;
+    border-radius: 10px;
+    color:black;
+    clear:both;
 }
 
 h3 {
@@ -95,12 +115,20 @@ h3 {
     opacity: 0.6;
 }
 
-
+.separation {
+    min-height: 150vh;
+    color: black;
+    border-right: solid black 4px;
+    box-shadow: 1px 1px 12px white;
+    background:url('../img/back.jpg') no-repeat center center fixed;
+}
 
 .labelserie{
 text-align:justify;
 font-weight:600;
 font-size:18px;
+    margin-left: 40%;
+    margin-top: 30px;
 }
 
 .ficheserie{
@@ -109,8 +137,10 @@ font-size:15px;
 }
 
 .ficheblock{
-border:black solid 5px;
-background:url('../img/back.jpg') no-repeat center center fixed;
+    color: black;
+    padding: 10px;
+/**background:url('../img/back.jpg') no-repeat center center fixed;
+**/
 }
 
 .ficheblock img{

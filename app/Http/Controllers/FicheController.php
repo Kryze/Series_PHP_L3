@@ -20,8 +20,9 @@ class FicheController extends Controller
 		if(isset($_GET["num_serie"])){
 			$id = $_GET["num_serie"];
 			$state = DB::table('series')->where('id',$id)->first();
-			if(!empty($state)) {
-                return view('fiche_serie', ['serie'=> $state]);
+            $state2 = DB::table('seriesseasons')->where('series_id',$id)->take(1)->get();
+			if(!empty($state) && !empty($state2)) {
+                return view('fiche_serie', ['serie'=> $state], ['seriesseasons'=>$state2]);
 			}
 		}
 		else{
