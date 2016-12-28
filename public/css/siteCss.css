@@ -31,6 +31,10 @@
     font-weight: 800;
 }
 
+#afficher {
+    margin-bottom: 20px;
+}
+
 input{
     border: lightgray solid 2px;
 }
@@ -52,6 +56,10 @@ input{
     color: white;
     margin-left: 20px;
     padding: 5px;
+}
+
+#invisible {
+    display: none;
 }
 
 #titre3 {
@@ -79,16 +87,23 @@ form {
     color:black;
 }
 
+.miniimage {
+    height:50px;
+    box-shadow: 1px 1px 12px white;
+    border: black solid 3px;
+    border-radius: 10px;
+}
+
 .block2 {
     margin-left: 10%;
     box-shadow: 1px 1px 12px white;
-    float: left;
     margin-top: 5%;
     background-color : rgba(255, 255, 255,0.7);
     border: black solid 3px;
     border-radius: 10px;
     color:black;
     clear:both;
+    float: left;
 }
 
 h3 {

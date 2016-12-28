@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/siteCss.css') }}">
         <script src="{{ URL::asset('js/jquery-3.1.1.js') }}"></script>
         <script src="{{ URL::asset('js/home.js') }}"></script>
+        <script type="text/javascript" src="{{ URL::asset('js/SiteJs.js') }}"></script>
         <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <!--<link href="'.$_SERVER['DOCUMENT_ROOT'].'/projetWebL3/css/siteCss.css" rel="stylesheet" type="text/css">-->
     </head>
@@ -42,23 +43,22 @@
         foreach ($seriesseasons as $season){
             $req = DB::table('seasons')->where('id',$season->season_id)->get();
             foreach($req as $r) {
-                echo "<h4>Saison $r->number</h4>";
+                echo "<input id='afficher' class='btn btn-lg btn-default' style='width:100%' type='submit' name='connexion' value='Saison $r->number'>
+                <div id='invisible'>";
                 $state3 = DB::table('seasonsepisodes')->where('season_id',$season->season_id)->orderBy('episode_id')->take(5)->get();
                 foreach ($state3 as $numEpisode){
                     $state4 = DB::table('episodes')->where('id',$numEpisode->episode_id)->orderBy('number')->get();
-                    echo "<div>";
                     foreach ($state4 as $episode){
                         echo "
                         <h4>Episode $episode->number</h4>
-                        <img class='block' src='https://image.tmdb.org/t/p/w154$episode->still_path'/>
-                        ";
+                        <img class='miniimage' src='https://image.tmdb.org/t/p/w154$episode->still_path'/>";
                     }
-                    echo "</div>";
                 }
+                echo "</div>";
             }
         }
         ?>
-        </div>
+    </div>
     <div class="col-lg-3 separation">
         <div class="row">
             </div>

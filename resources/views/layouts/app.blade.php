@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/siteCss.css') }}">
     <script src="{{ URL::asset('js/jquery-3.1.1.js') }}"></script>
     <script src="{{ URL::asset('js/home.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/SiteJs.js') }}"></script>
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!--<link href="'.$_SERVER['DOCUMENT_ROOT'].'/projetWebL3/css/siteCss.css" rel="stylesheet" type="text/css">-->
     <script>
@@ -84,6 +85,7 @@
         @section('footer')
             <div class="container-foot">
             </div>
+            <script type="text/javascript" src="{{ URL::asset('js/SiteJs') }}"></script>
             <script type="text/javascript" src="{{ URL::asset('js/jquery-3.1.1.js') }}"></script>
             <script type="text/javascript" src="{{ URL::asset('js/bootstrap.js') }}"></script>
             <script type="text/javascript" src="{{ URL::asset('js/boostrap.min.js') }}"></script>
