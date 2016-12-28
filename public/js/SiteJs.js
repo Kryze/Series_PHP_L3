@@ -4,6 +4,6 @@
 
 $(document).ready(function() {
     $("#afficher").click(function() {
-        $("#invisible").fadeIn(3000);
+        $("#invisible").fadeToggle(1500);
     });
 });

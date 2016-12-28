@@ -35,6 +35,10 @@
     margin-bottom: 20px;
 }
 
+#afficher:focus {
+    border: orange 2px solid;
+}
+
 input{
     border: lightgray solid 2px;
 }
@@ -87,8 +91,16 @@ form {
     color:black;
 }
 
+.well {
+    text-align: justify;
+    box-shadow: 1px 1px 12px black;
+    overflow: hidden;
+}
+
 .miniimage {
-    height:50px;
+    float: right;
+    margin: 5px;
+    height:150px;
     box-shadow: 1px 1px 12px white;
     border: black solid 3px;
     border-radius: 10px;
@@ -159,6 +171,7 @@ font-size:15px;
 }
 
 .ficheblock img{
+    overflow: hidden;
 width:250px;
 display: block;
 margin-left: auto;
