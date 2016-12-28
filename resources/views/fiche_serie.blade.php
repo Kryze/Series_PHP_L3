@@ -35,33 +35,44 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-3 separation">
-        <h2 id="titre3">Liste des épisodes</h2>
+    <div class="col-lg-2 separation">
+        <h2 id="titre3">Saisons</h2>
 
         <?php
         $url = \Illuminate\Support\Facades\URL::to('/');
         foreach ($seriesseasons as $season){
             $req = DB::table('seasons')->where('id',$season->season_id)->get();
             foreach($req as $r) {
-                echo "<input id='afficher' class='btn btn-lg btn-default' style='width:100%' type='submit' name='connexion' value='Saison $r->number'>
-                <div id='invisible'>";
+                echo "<input id='afficher' class='btn btn-lg btn-default' style='width:100%' type='submit' name='connexion' value='Saison $r->number'>";
+            }
+        }
+        ?>
+    </div>
+    <div class="col-lg-4 separation">
+        <h2 id="titre3">Episodes</h2>
+        <?php
+        $url = \Illuminate\Support\Facades\URL::to('/');
+        foreach ($seriesseasons as $season){
+            $req = DB::table('seasons')->where('id',$season->season_id)->get();
+            foreach($req as $r) {
+                echo "<div id='invisible'>";
                 $state3 = DB::table('seasonsepisodes')->where('season_id',$season->season_id)->orderBy('episode_id')->take(5)->get();
                 foreach ($state3 as $numEpisode){
                     $state4 = DB::table('episodes')->where('id',$numEpisode->episode_id)->orderBy('number')->get();
                     foreach ($state4 as $episode){
                         echo "
-                        <h4>Episode $episode->number</h4>
-                        <img class='miniimage' src='https://image.tmdb.org/t/p/w154$episode->still_path'/>";
+                        <div class='well'>
+                            <h4>Episode $episode->number</h4>
+                            <h5>$episode->name</h5>
+                            <img class='miniimage' src='https://image.tmdb.org/t/p/w154$episode->still_path'/>
+                            <p>$episode->overview</p>
+                        </div>";
                     }
                 }
                 echo "</div>";
             }
         }
         ?>
-    </div>
-    <div class="col-lg-3 separation">
-        <div class="row">
-            </div>
         </div>
 @endsection
 
