@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>App Name - @yield('title')</title>
+        <title><?php echo $serie->name?></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap.css') }}">
@@ -14,7 +14,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 id="titre2">Nos Séries</h1>
+    <h1 id="titre2"></h1>
 <div class="container">
     <div class="row">
             <!-- Formulaire de recherche -->
@@ -25,25 +25,24 @@
                 {!! Form::close() !!}
             </div>
 
-            <div class="center-block">
+            <div class="center-block ficheblock">
                 <?php
                     $url = \Illuminate\Support\Facades\URL::to('/');
-					foreach ($infoSeries as $name){
-                        echo "<div class='serie $name->id')'>
-                                    <a href='$url/fiche_serie?num_serie=$name->id' ><img src='https://image.tmdb.org/t/p/w154$name->poster_path'/></a>
-                              </div>";
-                    }
+					echo "<h1>$serie->name</h1> 
+						  <img src='https://image.tmdb.org/t/p/w154$serie->poster_path'/> 
+						  <p class=labelserie> Première diffusion : <span class=ficheserie>$serie->first_air_date </span> </p> 
+						  <p class=labelserie> Dernière diffusion : <span class=ficheserie>$serie->last_air_date </span> </p>
+						  <p class=labelserie> Nombre d'épisodes : <span class=ficheserie>$serie->number_of_episodes </span> </p>
+						  <p class=labelserie> Nombre de saisons : <span class=ficheserie>$serie->number_of_seasons </span> </p>
+						  <p class=labelserie> Résumé : <span class=ficheserie>$serie->overview</span>";
                 ?>
-                   
-                
 
-                <button style="display: block; width: 15%; margin: 15px auto;">Afficher plus + </button>
+                <p class=labelserie style="text-align:center"><a href="{{ url('home') }}">Retour à la liste des séries</a></p>
             </div>
     </div>
 </div>
 @endsection
 
 <script>
-
 </script>
 </html>

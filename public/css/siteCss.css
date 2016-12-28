@@ -94,3 +94,33 @@ h3 {
 .serie:hover {
     opacity: 0.6;
 }
+
+
+
+.labelserie{
+text-align:justify;
+font-weight:600;
+font-size:18px;
+}
+
+.ficheserie{
+font-weight:200;
+font-size:15px;
+}
+
+.ficheblock{
+border:black solid 5px;
+background:url('../img/back.jpg') no-repeat center center fixed;
+}
+
+.ficheblock img{
+width:250px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+.ficheblock h1{
+text-align:center;
+color:#1d2a4f;
+}
