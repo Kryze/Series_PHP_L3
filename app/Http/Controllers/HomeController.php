@@ -27,7 +27,7 @@ class HomeController extends Controller
         if(!isset($_SESSION['id'])){
           return view('inscription', ['message' => 'Vous devez d\'abord vous connecter ou vous inscrire']);
         }
-        $infoSeries = DB::table('series')->select('*')->orderBy('popularity', 'desc')->take(21)->get();
+        $infoSeries = DB::table('series')->select('*')->orderBy('popularity', 'desc')->paginate(18);
         return view('home', ['infoSeries' => $infoSeries]);
     }
 }

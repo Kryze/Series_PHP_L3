@@ -21,7 +21,7 @@
                               </div>";
                     }
                 ?>
-                <button style="display: block; width: 15%; margin: 15px auto;">Afficher plus + </button>
+                {!! $infoSeries->links() !!}
             </div>
     </div>
 </div>
