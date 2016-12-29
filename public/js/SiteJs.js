@@ -3,7 +3,12 @@
  */
 
 $(document).ready(function() {
-    $("#afficher").click(function() {
-        $("#invisible").fadeToggle(1500);
-    });
+    alert('lol');
+    var int = 0;
+    for(int;i<2;i++) {
+        alert("#afficher" + int);
+        $("#afficher" + int).click(function () {
+            $("#invisible"+int).fadeToggle(1500);
+        });
+    }
 });

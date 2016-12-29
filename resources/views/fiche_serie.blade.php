@@ -39,11 +39,13 @@
         <h2 id="titre3">Saisons</h2>
 
         <?php
+        $int = 0;
         $url = \Illuminate\Support\Facades\URL::to('/');
         foreach ($seriesseasons as $season){
             $req = DB::table('seasons')->where('id',$season->season_id)->get();
             foreach($req as $r) {
-                echo "<input id='afficher' class='btn btn-lg btn-default' style='width:100%' type='submit' name='connexion' value='Saison $r->number'>";
+                echo "<input id='afficher$int' class='btn btn-lg btn-default afficher' style='width:100%' type='submit' name='connexion' value='Saison $r->number'>";
+                $int = $int + 1;
             }
         }
         ?>
@@ -51,11 +53,13 @@
     <div class="col-lg-4 separation">
         <h2 id="titre3">Episodes</h2>
         <?php
+        $int = 0;
         $url = \Illuminate\Support\Facades\URL::to('/');
         foreach ($seriesseasons as $season){
             $req = DB::table('seasons')->where('id',$season->season_id)->get();
             foreach($req as $r) {
-                echo "<div id='invisible'>";
+                echo "<div id='invisible$int' class='invisible'>";
+                $int = $int + 1;
                 $state3 = DB::table('seasonsepisodes')->where('season_id',$season->season_id)->orderBy('episode_id')->take(5)->get();
                 foreach ($state3 as $numEpisode){
                     $state4 = DB::table('episodes')->where('id',$numEpisode->episode_id)->orderBy('number')->get();
