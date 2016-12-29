@@ -66,6 +66,7 @@ input{
     display: none;
 }
 
+
 #titre3 {
     margin-top: 80px;
     color: black;
@@ -97,10 +98,14 @@ form {
     overflow: hidden;
 }
 
+.resume {
+
+}
+
 .miniimage {
     float: right;
     margin: 5px;
-    height:150px;
+    height:120px;
     box-shadow: 1px 1px 12px white;
     border: black solid 3px;
     border-radius: 10px;
@@ -143,7 +148,7 @@ h3 {
 }
 
 .separation {
-    min-height: 150vh;
+    min-height: 300vh;
     color: black;
     border-right: solid black 4px;
     box-shadow: 1px 1px 12px white;
@@ -154,7 +159,6 @@ h3 {
 text-align:justify;
 font-weight:600;
 font-size:18px;
-    margin-left: 10px;
     margin-top: 30px;
 }
 
@@ -166,6 +170,7 @@ font-size:15px;
 .ficheblock{
     color: black;
     padding: 10px;
+    overflow: hidden;
 /**background:url('../img/back.jpg') no-repeat center center fixed;
 **/
 }
@@ -174,8 +179,8 @@ font-size:15px;
     overflow: hidden;
 width:250px;
 display: block;
-margin-left: auto;
-margin-right: auto;
+    margin-left: 0;
+    margin-right: 20px;
 }
 
 .ficheblock h1{
