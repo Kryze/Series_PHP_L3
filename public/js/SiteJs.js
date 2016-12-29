@@ -17,4 +17,10 @@ $(document).ready(function() {
             break;
         }
     }
+    
+    $('#episode').click(function(){
+      console.log("ok");
+      this.addClass("btn-default");
+      this.changvalue("Vue");
+    });
 });

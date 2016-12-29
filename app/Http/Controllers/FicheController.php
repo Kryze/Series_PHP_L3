@@ -20,7 +20,7 @@ class FicheController extends Controller
 		if(isset($_GET["num_serie"])){
 			$id = $_GET["num_serie"];
 			$state = DB::table('series')->where('id',$id)->first();
-            $state2 = DB::table('seriesseasons')->where('series_id',$id)->take(5)->get();
+            $state2 = DB::table('seriesseasons')->where('series_id',$id)->get();
 			if(!empty($state) && !empty($state2)) {
                 return view('fiche_serie', ['serie'=> $state], ['seriesseasons'=>$state2]);
 			}
@@ -28,10 +28,10 @@ class FicheController extends Controller
 		else{
 			echo "Erreur";
 		}
-		
+
         /*$res = Input::get('keywords');
 
-		
+
         if($res != "") {
 
             $keywords = explode(' ', $res);
@@ -56,4 +56,3 @@ class FicheController extends Controller
             return "veuillez inscrire un kfjlds";*/
         }
  }
-

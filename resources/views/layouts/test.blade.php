@@ -94,7 +94,6 @@
         </div>
     <script type="text/javascript" src="{{ URL::asset('js/jquery-3.1.1.js') }}"></script>
         <script type="text/javascript" src="{{ URL::asset('js/SiteJs.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/bootstrap.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/boostrap.min.js') }}"></script>
 </footer>
 @show

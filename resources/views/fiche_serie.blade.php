@@ -52,7 +52,7 @@
             foreach($req as $r) {
                 echo "<div id='invisible$int' class='invisible' >";
                 $int = $int + 1;
-                $state3 = DB::table('seasonsepisodes')->where('season_id',$season->season_id)->orderBy('episode_id')->take(5)->get();
+                $state3 = DB::table('seasonsepisodes')->where('season_id',$season->season_id)->orderBy('episode_id')->get();
                 foreach ($state3 as $numEpisode){
                     $state4 = DB::table('episodes')->where('id',$numEpisode->episode_id)->orderBy('number')->get();
                     foreach ($state4 as $episode){
@@ -62,7 +62,7 @@
                             <h5>$episode->name</h5>
                             <img class='miniimage' src='https://image.tmdb.org/t/p/w154$episode->still_path'/>
                             <p>$episode->overview</p>
-                            <input class='btn btn-group-sm btn-warning' style='width:100%' type='submit' name='connexion' value='Vue'>
+                            <input data-id='$episode->id' class='btn btn-group-sm btn-warning episode' style='width:100%' type='submit' name='connexion' value='Non vue'>
                         </div>";
                     }
                 }
@@ -73,6 +73,4 @@
         </div>
 @endsection
 
-<script>
-</script>
 </html>
