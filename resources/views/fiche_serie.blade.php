@@ -3,6 +3,7 @@
 @extends('layouts.app')
 
 @section('content')
+	<div class=separation>
     <div class="col-lg-6 separation">
         <div class="resume">
     <h1 id="titre3"><?php echo $serie->name?></h1>
@@ -61,13 +62,13 @@
                             <input data-id='$episode->id' class='btn btn-group-sm btn-warning episode' style='width:100%' type='submit' name='connexion' value='Non vue'>
                         </div>";
                     }
-                }
+                
                 echo "</div>";
-				echo "TROLOLOLOLOLO"
-            
+            }
         
         ?>
         </div>
+		<div>
 @endsection
 
 </html>

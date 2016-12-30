@@ -153,13 +153,14 @@ h3 {
     border-right: solid black 4px;
     box-shadow: 1px 1px 12px white;
     background:url('../img/back.jpg') no-repeat center center fixed;
+	background-size: cover;
 }
 
 .labelserie{
 text-align:justify;
 font-weight:600;
 font-size:18px;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .ficheserie{
