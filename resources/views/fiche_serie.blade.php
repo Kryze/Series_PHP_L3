@@ -32,13 +32,10 @@
         <?php
         $int = 0;
         $url = \Illuminate\Support\Facades\URL::to('/');
-        foreach ($seriesseasons as $season){
-            $req = DB::table('seasons')->where('id',$season->season_id)->get();
-            foreach($req as $r) {
+            foreach($sea as $r) {
                 echo "<input id='afficher$int' num='$int' class='btn btn-lg btn-default afficher' style='width:100%' type='submit' name='connexion' value='Saison $r->number'>";
                 $int = $int + 1;
             }
-        }
         ?>
             </div>
     </div>
@@ -47,15 +44,14 @@
         <?php
         $int = 0;
         $url = \Illuminate\Support\Facades\URL::to('/');
-        foreach ($seriesseasons as $season){
-            $req = DB::table('seasons')->where('id',$season->season_id)->get();
-            foreach($req as $r) {
+            foreach($sea as $r) {
                 echo "<div id='invisible$int' class='invisible' >";
                 $int = $int + 1;
-                $state3 = DB::table('seasonsepisodes')->where('season_id',$season->season_id)->orderBy('episode_id')->get();
-                foreach ($state3 as $numEpisode){
-                    $state4 = DB::table('episodes')->where('id',$numEpisode->episode_id)->orderBy('number')->get();
-                    foreach ($state4 as $episode){
+				$statetest = DB::table('episodes')->join('seasonsepisodes', 'seasonsepisodes.episode_id', '=', 'episodes.id')->where('season_id',$r->id)->orderBy('episodes.number', 'asc')->get();
+                //$state3 = DB::table('seasonsepisodes')->where('season_id',$r->id)->get();
+                //foreach ($state3 as $numEpisode){
+                    //$state4 = DB::table('episodes')->where('id',$numEpisode->episode_id)->orderBy('number')->get();
+                    foreach ($statetest as $episode){
                         echo "
                         <div class='well'>
                             <h4>Episode $episode->number</h4>
@@ -67,8 +63,9 @@
                     }
                 }
                 echo "</div>";
-            }
-        }
+				echo "TROLOLOLOLOLO"
+            
+        
         ?>
         </div>
 @endsection
