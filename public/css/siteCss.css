@@ -141,6 +141,7 @@ h3 {
 .serie{
     display: inline-block;
     margin: 5px;
+	font-size:65%;
 }
 
 .serie:hover {
@@ -206,4 +207,10 @@ color:white;
 background-color:red;
 text-align:center;
 font-weight:800;
+}
+
+.subname{
+color:white;
+font-weight:600;
+margin-left:20px;
 }

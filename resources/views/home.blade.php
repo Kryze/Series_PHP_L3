@@ -18,6 +18,7 @@
 					foreach ($infoSeries as $name){
                         echo "<div class='serie $name->id')'>
                                     <a href='$url/fiche_serie?num_serie=$name->id' ><img class='block' src='https://image.tmdb.org/t/p/w154$name->poster_path'/></a>
+									<p class=\"subname\"> $name->name </p>
                               </div>";
                     }
                 ?>
