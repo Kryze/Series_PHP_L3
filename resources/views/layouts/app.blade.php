@@ -59,9 +59,9 @@
 
 
 
-                                /*<span class="caret"></span>*/
-                                /*
-                                <ul class="dropdown-menu" role="menu">
+                                <span></span>
+                                
+                                <!--<ul class="dropdown-menu" role="menu">
                                     <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="
@@ -73,8 +73,8 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
-                                </ul>
-                                */
+                                </ul>-->
+                                
                             </li>
                             <li>
                                 <a href="{{ url('/logout') }}"
