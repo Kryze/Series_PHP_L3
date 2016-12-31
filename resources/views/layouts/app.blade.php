@@ -2,7 +2,7 @@
 <html lang="en">
 <html>
 <head>
-    <title>App Name - @yield('title')</title>
+    <title>@yield('title')</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap.css') }}">
@@ -35,7 +35,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        ShowTracker
                     </a>
                 </div>
 
@@ -66,7 +66,7 @@
                                         <a href="{{ url('/logout') }}"
                                             onclick="
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            Déconnexion
                                         </a>
 
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
@@ -80,7 +80,7 @@
                                 <a href="{{ url('/logout') }}"
                                     onclick="
                                              document.getElementById('logout-form').submit();">
-                                    Logout
+                                    Déconnexion
                                 </a>
 
                                 <form id="logout-form" action="{{ url('/logout') }}" method="GET" style="display: none;">
