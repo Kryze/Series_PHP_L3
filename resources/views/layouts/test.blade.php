@@ -77,7 +77,7 @@
                     <form method="post" action="./confirm">
                         <p> Nom d'utilisateur : <input type="text" name="login" required/> </p>
                         <p> Mot de passe : <input type="password" name="pwd" required/> </p>
-                        <p> Verifier mot de passe : <input type="password" name="pwd2" required/> </p>
+                        <p> Confirmation : <input type="password" name="pwd2" required/> </p>
                         <p> Email : <input type="text" name="email" required/> </p>
                         <p class="text-center"> <input class="btn btn-md btn-warning" type="submit" name="connexion" value="Inscription"/></p>
                         <input name="_token" type="hidden" value="{{ csrf_token() }}">

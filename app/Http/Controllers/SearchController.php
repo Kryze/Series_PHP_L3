@@ -24,22 +24,27 @@ class SearchController extends Controller
 
             $like = "";
             foreach ($keywords as $keyword) {
-                if (strlen($keyword) > 3)
+                if (strlen($keyword) > 2){
                     $like .= " original_name LIKE '%" . $keyword . "%' OR";
-            }
+				
             $like = substr($like, 0, strlen($like) - 3);
 
             $req = "SELECT * FROM series WHERE " . $like . "limit 25";
 
             $state = DB::select($req);
-            dump($state);
             if(!empty($state)) {
-                return view('search', ['state' => $state]);
+                return view('search', ['state' => $state , 'terme' => $res]);
             }else{
                 return "Aucun résultat";
             }
-        }else{
-            return "veuillez inscrire un kfjlds";
+			}
+			else{
+				return redirect()->action('HomeController@index');
+			}
+			}
+			}
+        else{
+            return redirect()->action('HomeController@index');
         }
     }
 
