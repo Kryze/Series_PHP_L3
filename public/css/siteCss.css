@@ -189,3 +189,13 @@ display: block;
 text-align:center;
 color:#1d2a4f;
 }
+
+#nomprofil{
+margin-top:50px;
+}
+
+#infos{
+color:white;
+width: 50%;
+margin: 0 auto; 
+}

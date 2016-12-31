@@ -28,6 +28,8 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/recherche', 'SearchController@index');
 
+Route::get('/profil', 'ProfilController@profil');
+
 Route::get('/fiche_serie', 'FicheController@fiche');
 
 Route::group(['prefix' => 'fiche'], function(){
