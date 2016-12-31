@@ -69,6 +69,8 @@
         ?>
         </div>
 		</div>
+		<script> document.getElementById('image_Ecran').style.background = "url('img/back.jpg') center no-repeat fixed"
+				 document.getElementById('image_Ecran').style.backgroundSize = "cover"</script>
 @endsection
 
 </html>
