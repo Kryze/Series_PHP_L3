@@ -35,7 +35,7 @@ class FormController extends Controller
           $_SESSION['email'] = $users->email;
           return redirect()->action('HomeController@index');
         }else{
-          $message = 'Le nom d\'utilisateur et le mot de passe ne correspondent pas.';
+          $message = ' Le nom d\'utilisateur et le mot de passe ne correspondent pas. ';
           return view('inscription', ['message' => $message]);
         }
       }
@@ -47,26 +47,26 @@ class FormController extends Controller
       $valid = true;
       if(!isset($_POST['login']) || strlen($_POST['login']) < 4){
         $valid = false;
-        $message .= 'Le nom d\'utilisateur est trop court.';
+        $message .= ' Le nom d\'utilisateur est trop court. ';
       }else{
         $login = $_POST['login'];
       }
 
       if(!isset($_POST['pwd'])){
           $valid = false;
-          $message .= 'Le mot de passe doit être renseigné.';
+          $message .= ' Le mot de passe doit être renseigné. ';
       }else{
         $pwd = $_POST['pwd'];
       }
 
       if(!isset($_POST['pwd2']) || $pwd != $_POST['pwd2']){
           $valid = false;
-          $message .= 'Les mots de passe doivent correspondre.';
+          $message .= ' Les mots de passe doivent correspondre. ';
       }
 
       if (!isset($_POST['email']) || !contains('@', $_POST['email']) || !contains('.', $_POST['email'])){
           $valid = false;
-          $message .= 'L\'email entré est invalide.';
+          $message .= ' L\'email entré est invalide. ';
         }
         else{
           $email = $_POST['email'];

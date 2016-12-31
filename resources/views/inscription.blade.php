@@ -11,5 +11,6 @@
     @parent
 @endsection
 @section('footer')
+	<?php echo "<p id=\"errins\">$message</p>"?>
     @parent
 @endsection
