@@ -49,6 +49,9 @@
                 echo "<div id='invisible$int' class='invisible' >";
                 $int = $int + 1;
 				$statetest = DB::table('episodes')->join('seasonsepisodes', 'seasonsepisodes.episode_id', '=', 'episodes.id')->where('season_id',$r->id)->orderBy('episodes.number', 'asc')->get();
+                $state3 = DB::table('seasonsepisodes')->where('season_id',$r->id)->get();
+                foreach ($state3 as $numEpisode){
+                $state4 = DB::table('episodes')->where('id',$numEpisode->episode_id)->orderBy('number')->get();
                     foreach ($statetest as $episode){
                         echo "
                         <div class='well'>
@@ -61,8 +64,8 @@
                     }
                 
                 echo "</div>";
+                }
             }
-        
         ?>
         </div>
 		</div>
