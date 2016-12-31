@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace ShowTracker;
 
 class SeriesSeasons extends \Illuminate\Database\Eloquent\Model {
 	protected $table ='seriesseasons';

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace ShowTracker;
 
 class Genres extends \Illuminate\Database\Eloquent\Model {
 	protected $table ='genres';

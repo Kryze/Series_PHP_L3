@@ -1,7 +1,7 @@
 
 
 @extends('layouts.app')
-
+@section('title', 'Fiche Serie')
 @section('content')
 	<div class=separation>
     <div class="col-lg-6 separation">

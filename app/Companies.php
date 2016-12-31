@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace ShowTracker;
 
 class Companies extends \Illuminate\Database\Eloquent\Model {
 	protected $table ='companies';

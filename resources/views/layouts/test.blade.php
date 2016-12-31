@@ -2,7 +2,7 @@
 <html>
 @section('head')
 <head>
-    <title>App Name - @yield('title')</title>
+    <title>@yield('title')</title>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/bootstrap.css') }}">
@@ -43,7 +43,7 @@
                 <div class="col-lg-8">
                 </div>
                 <div class="col-lg-4">
-                    <h1 id="titre">Toutes les séries à dispositions</h1>
+                    <h1 id="titre">Regardez des series autrement</h1>
                 </div>
             </div>
             <div class="row">
@@ -78,7 +78,7 @@
                         <p> Nom d'utilisateur : <input type="text" name="login" required/> </p>
                         <p> Mot de passe : <input type="password" name="pwd" required/> </p>
                         <p> Verifier mot de passe : <input type="password" name="pwd2" required/> </p>
-                        <p> Adresse : <input type="text" name="email" required/> </p>
+                        <p> Email : <input type="text" name="email" required/> </p>
                         <p class="text-center"> <input class="btn btn-md btn-warning" type="submit" name="connexion" value="Inscription"/></p>
                         <input name="_token" type="hidden" value="{{ csrf_token() }}">
                     </form>

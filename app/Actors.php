@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace ShowTracker;
 
 class Actors extends \Illuminate\Database\Eloquent\Model {
 	protected $table ='actors';
