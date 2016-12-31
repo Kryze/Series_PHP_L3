@@ -69,7 +69,7 @@ input{
 
 #titre3 {
     margin-top: 80px;
-    color: black;
+    color: white;
     margin-left: 20px;
     padding: 5px;
 }
@@ -149,13 +149,9 @@ h3 {
 }
 
 .separation {
-	height: 100% !important;
-	min-height: auto;
     color: black;
-    border-right: solid black 4px;
+    border-left: solid black 4px;
     box-shadow: 1px 1px 12px white;
-    /*background:url('../img/back.jpg') no-repeat center center fixed;*/
-	background-size: cover;
 }
 
 .labelserie{
@@ -171,7 +167,7 @@ font-size:15px;
 }
 
 .ficheblock{
-    color: black;
+    color: white;
     padding: 10px;
     overflow: hidden;
 /**background:url('../img/back.jpg') no-repeat center center fixed;
@@ -213,4 +209,12 @@ font-weight:800;
 color:white;
 font-weight:600;
 margin-left:20px;
+}
+
+.NoVu {
+    box-shadow: 1px 1px 22px red;
+}
+
+.Vu {
+    box-shadow: 1px 1px 22px green;
 }

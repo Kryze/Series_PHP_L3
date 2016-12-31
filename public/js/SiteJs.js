@@ -3,6 +3,7 @@
  */
 
 $(document).ready(function() {
+    $("#invisible0").removeClass("invisible");
     for(var int=0;int<100;int++) {
         if($("#afficher"+int).length > 0) {
             $("#afficher" + int).click(function () {
