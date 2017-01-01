@@ -15,6 +15,12 @@ class FormController extends Controller
 
     }
 
+    function generateSalt()
+    {
+    $salt = substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ", 10)), 0, 10);
+    return $salt;
+    }
+
     public function index($m ='')
     {
         return view('inscription', ['message' => $m]);
@@ -24,12 +30,11 @@ class FormController extends Controller
     {
       if(isset($_POST['login']) && isset($_POST['mdp'])){
         $users = DB::table('users')
-                   ->select('id', 'name', 'email')
+                   ->select('id', 'name', 'password', 'email', 'salt')
                    ->where([
-                        ['name', '=', $_POST['login']],
-                        ['password', '=', $_POST['mdp']]
+                        ['name', '=', $_POST['login']]
                     ])->first();
-        if(isset($users)){
+        if(isset($users) && hash('sha384', $users->salt.$_POST['mdp']) == $users->password){
           $_SESSION['id'] = $users->id;
           $_SESSION['login'] = $users->name;
           $_SESSION['email'] = $users->email;
@@ -78,8 +83,10 @@ class FormController extends Controller
                      ->where('name', '=', $login)
                      ->first();
           if(!isset($users)){
+            $salt = $this->generateSalt();
+            $pwdCrypt = hash('sha384', $salt.$pwd);
             $id = DB::table('users')->insertGetId(
-              ['name' => $login, 'password' => $pwd, 'email' => $email]
+              ['name' => $login, 'password' => $pwdCrypt, 'email' => $email, 'salt' => $salt]
             );
             $_SESSION['id'] = $id;
             $_SESSION['login'] = $login;
@@ -99,4 +106,6 @@ class FormController extends Controller
       $_SESSION = array();
       return view('inscription');
     }
+
+
 }
