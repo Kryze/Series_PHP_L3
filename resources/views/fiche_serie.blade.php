@@ -25,7 +25,8 @@
         </div>
     </div>
         </div>
-    <div class="col-lg-2 separation">
+    <div class="separation col-lg-6">
+    <div class="col-lg-4">
         <div class="resume">
         <h2 id="titre3">Saisons</h2>
 
@@ -39,7 +40,7 @@
         ?>
             </div>
     </div>
-    <div class="col-lg-4 separation">
+    <div class="col-lg-8 separation">
         <h2 id="titre3">Episodes</h2>
         <?php
         $int = 0;
@@ -82,6 +83,7 @@
             }
 
         ?>
+        </div>
         </div>
 		<script></script>
 @endsection
