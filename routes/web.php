@@ -26,6 +26,8 @@ Route::get('/logout', 'FormController@logout');
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/recommandation', 'RecommandationController@index');
+
 Route::get('/recherche', 'SearchController@index');
 
 Route::get('/profil', 'ProfilController@profil');

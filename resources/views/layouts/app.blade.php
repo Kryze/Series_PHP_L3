@@ -41,9 +41,10 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <!--<ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav">
                         <li><a href="{{ url('/home') }}">Catalogue</a></li>
-                    </ul>-->
+                        <li><a href="{{ url('/recommandation') }}">Recommandation</a></li>
+                    </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -60,7 +61,7 @@
 
 
                                 <span></span>
-                                
+
                                 <!--<ul class="dropdown-menu" role="menu">
                                     <li>
                                         <a href="{{ url('/logout') }}"
@@ -74,7 +75,7 @@
                                         </form>
                                     </li>
                                 </ul>-->
-                                
+
                             </li>
                             <li>
                                 <a href="{{ url('/logout') }}"
