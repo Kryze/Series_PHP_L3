@@ -14,7 +14,6 @@
                               </div>";
                     }
                 ?>
-                {!! $infoSeries->links() !!}
             </div>
     </div>
 </div>

@@ -4,6 +4,7 @@ namespace ShowTracker\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Collection;
 
 class RecommandationController extends Controller
 {
@@ -38,7 +39,16 @@ class RecommandationController extends Controller
                                         ->join('seasonsepisodes', 'seasonsepisodes.season_id', '=', 'seriesseasons.season_id')
                                         ->join('usersepisodes', 'seasonsepisodes.episode_id', '=', 'usersepisodes.episode_id')->get();
                               })
-                          ->distinct()->select('series.id', 'series.name', 'series.poster_path', 'series.popularity')->orderBy('popularity', 'desc')->paginate(18);
-        return view('recommandation', ['infoSeries' => $infoSeries]);
+                          ->whereNotIn('seriesgenres.series_id', function($query)
+                              {
+                                  $query->select('seriesseasons.series_id')
+                                        ->from('seriesseasons')
+                                        ->join('seasonsepisodes', 'seasonsepisodes.season_id', '=', 'seriesseasons.season_id')
+                                        ->join('usersepisodes', 'seasonsepisodes.episode_id', '=', 'usersepisodes.episode_id')->get();
+                              })
+                          ->distinct()->select('series.id', 'series.name', 'series.poster_path', 'series.popularity')->orderBy('popularity', 'desc')->get();
+        $res = collect($infoSeries);
+        $res = $res->random(18);
+        return view('recommandation', ['infoSeries' => $res]);
     }
 }
