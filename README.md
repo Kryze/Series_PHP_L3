@@ -41,3 +41,8 @@ Utiliser les commandes php artisan key:generate
 php artisan config:clear
 
 NORMALEMENT CA MARCHE ENSUITE
+
+// Pour le fonctionnement du salage
+
+Il faut ajouter une colonne salt à la table users (varchar(10))
+Et changer la taille max de password a minimum 120
