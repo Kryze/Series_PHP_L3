@@ -1,6 +1,6 @@
 
 
-@extends('layouts.app')
+@extends('layouts.app2')
 @section('title', 'Fiche Serie')
 @section('content')
     <div class="col-lg-6">
