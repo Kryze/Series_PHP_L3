@@ -63,18 +63,19 @@
                             <h4>Episode $episode->number</h4>
                             <h5>$episode->name</h5>
                             <img class='miniimage' src='https://image.tmdb.org/t/p/w154$episode->still_path'/>
-                            <p>$episode->overview</p>
-                                <form method='post' action='../resources/views/manipulerEpisode.php'>
-                                    <input class='hide' type='text' name='id' size='1' value=' . $episode->id . ' onFocus='this.blur()' maxlength='1'>";
+                            <p>$episode->overview</p>";
+								echo Form::open(['method' => 'get', 'url' => 'episode']);
+                                //<form method='get' action=''{{action('EpisodeController@episode')}}''>
+                                  echo"<input class='hide' type='text' name='id' size='1' value='$episode->id' onFocus='this.blur()' maxlength='1'>";
+								  echo"<input class='hide' type='text' name='num_serie' size='1' value='$serie->id' onFocus='this.blur()' maxlength='1'>";
                                     if ($userepisode==0) {
-                                        echo "<input data-id='$episode->id' class='btn btn-group-sm btn-warning episode' style='width:100%' type='submit' name='non_vue' value='Vu'>";
+                                        echo "<input data-id='$episode->id' class='btn btn-group-sm btn-primary episode' style='width:100%' type='submit' name='non_vue' value='Non Vu'>";
                                     }
                                      else {
-                                        echo "<input data-id='$episode->id' class='btn btn-group-sm btn-primary episode' style='width:100%' type='submit' name='vue' value='Non vu'>";
+                                        echo "<input data-id='$episode->id' class='btn btn-group-sm btn-warning episode' style='width:100%' type='submit' name='vue' value='Vu'>";
                                     }
-                                    echo "
-                                </form>
-                        </div>";
+                                    echo Form::close();
+                        echo "</div>";
                     }
                 
                 echo "</div>";

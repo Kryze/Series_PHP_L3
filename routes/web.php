@@ -30,6 +30,8 @@ Route::get('/recherche', 'SearchController@index');
 
 Route::get('/profil', 'ProfilController@profil');
 
+Route::get('/episode', 'EpisodeController@episode');
+
 Route::get('/fiche_serie', 'FicheController@fiche');
 
 Route::group(['prefix' => 'fiche'], function(){
