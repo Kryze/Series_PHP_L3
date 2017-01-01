@@ -20,6 +20,36 @@
 						  <p> Résumé : <span class=ficheserie>$serie->overview</span>
 						  </div>";
                 ?>
+                <div class="center-block">
+                  <h2>Par les mêmes réalisateurs : </h2>
+                    <?php
+                        $url = \Illuminate\Support\Facades\URL::to('/');
+                        $infoSeries = DB::table('series')
+                                          ->join('seriescreators', 'series.id', '=', 'seriescreators.series_id')
+                                          ->whereIn('seriescreators.creator_id', function($query)
+                                              {
+                                                  $query->select('creator_id')->distinct()
+                                                        ->from('seriescreators')
+                                                        ->join('series', 'series.id', '=', 'seriescreators.series_id')
+                                                        ->where('series.id', '=', $_GET["num_serie"])->get();
+                                              })
+                                          ->whereNotIn('seriescreators.series_id', function($query)
+                                              {
+                                                  $query->select('seriesseasons.series_id')
+                                                        ->from('seriesseasons')
+                                                        ->join('seasonsepisodes', 'seasonsepisodes.season_id', '=', 'seriesseasons.season_id')
+                                                        ->join('usersepisodes', 'seasonsepisodes.episode_id', '=', 'usersepisodes.episode_id')->get();
+                                              })
+                                          ->where('series.id', '<>', $_GET['num_serie'])
+                                          ->distinct()->select('series.id', 'series.name', 'series.poster_path', 'series.popularity')->orderBy('popularity', 'desc')->get();
+              foreach ($infoSeries as $name){
+                            echo "<div class='serie $name->id')'>
+                                        <a href='$url/fiche_serie?num_serie=$name->id' ><img class='block' src='https://image.tmdb.org/t/p/w154$name->poster_path'/></a>
+                      <p class=\"subname\"> $name->name </p>
+                                  </div>";
+                        }
+                    ?>
+                </div>
                 <p class='labelserie' style="text-align:center"><a href="{{ url('home') }}">Retour à la liste des séries</a></p>
             </div>
         </div>
@@ -91,7 +121,7 @@
                                     echo Form::close();
                         echo "</div>";
                     }
-                
+
                 echo "</div>";
             }
 
