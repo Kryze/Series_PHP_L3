@@ -34,7 +34,20 @@
         $int = 0;
         $url = \Illuminate\Support\Facades\URL::to('/');
             foreach($sea as $r) {
-                echo "<input id='afficher$int' num='$int' class='btn btn-lg btn-default afficher' style='width:100%' type='submit' name='connexion' value='Saison $r->number'>";
+                $nbEpi = 0;
+                $statetest = DB::table('episodes')->join('seasonsepisodes', 'seasonsepisodes.episode_id', '=', 'episodes.id')->where('season_id',$r->id)->orderBy('episodes.number', 'asc')->get();
+                foreach ($statetest as $episode){
+                    $userepisode = DB::table('usersepisodes')->where('episode_id',$episode->id)->where('user_id',$_SESSION["id"])->count();
+                    if($userepisode==1) {
+                        $nbEpi = $nbEpi + 1;
+                    }
+                }
+                if($nbEpi == $episode->number) {
+                    echo "<input id='afficher$int' num='$int' class='btn btn-lg btn-default afficher Vu' style='width:100%' type='submit' name='connexion' value='Saison $r->number'>";
+                }
+                else {
+                echo "<input id='afficher$int' num='$int' class='btn btn-lg btn-default afficher NoVu' style='width:100%' type='submit' name='connexion' value='Saison $r->number'>";
+                    }
                 $int = $int + 1;
             }
         ?>

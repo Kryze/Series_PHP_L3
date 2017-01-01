@@ -154,6 +154,10 @@ h3 {
     box-shadow: 1px 1px 12px white;
 }
 
+a {
+    color: orange;
+}
+
 .labelserie{
 text-align:justify;
 font-weight:600;
