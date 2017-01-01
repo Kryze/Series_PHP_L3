@@ -10,12 +10,12 @@
 }
 
 #image_Ecran2{
-    background: url("../img/blur2.jpg") no-repeat center center fixed;
+    background: url("../img/blur.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-image:url('../img/blur2.jpg');
+    background-image:url('../img/blur.jpg');
     background-size: cover;
     margin: 0;
 }
