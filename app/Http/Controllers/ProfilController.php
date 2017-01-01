@@ -20,9 +20,9 @@ class ProfilController extends Controller
 			$id = $_SESSION["id"];
 			$state = DB::table('users')->where('id',$id)->first();
             $state2 = DB::table('usersepisodes')->where('user_id',$id)->get();
-            $state3 = DB::table('seasonsepisodes')->join('usersepisodes', 'seasonsepisodes.episode_id', '=', 'usersepisodes.episode_id')->where('user_id',$id)->get();
+            $state3 = DB::table('seasonsepisodes')->join('usersepisodes', 'usersepisodes.episode_id', '=', 'seasonsepisodes.episode_id')->where('user_id',$id)->get();
 			if(!empty($state) && !empty($state2) && !empty($state3)) {
-                return view('profil', ['user'=> $state], ['userepisodes'=>$state2], ['seasonsepisodes'=>$state3]);
+                return view('profil', ['user'=> $state, 'userepisodes'=>$state2, 'seasonsepisodes'=>$state3]);
 			}
 		}
 		else{

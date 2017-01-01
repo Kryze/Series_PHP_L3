@@ -20,7 +20,7 @@
     foreach ($seasonsepisodes as $season) {
         $state = DB::table('seasons')->where('id',$season->season_id)->orderBy('seasons.number', 'asc')->get();
         foreach ($state as $s) {
-            echo "<p>$season->name</p>";
+            echo "<p>$s->name</p>";
         }
     }
     foreach ($userepisodes as $episode){
