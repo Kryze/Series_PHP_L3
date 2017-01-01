@@ -69,6 +69,18 @@ input{
     background-color: rgba(0, 0, 255, 0.5);
 }
 
+#profil {
+    border: solid black 2px;
+    width : 75px;
+    padding: 1px;
+}
+
+#profil2 {
+    border: solid black 2px;
+    width : 275px;
+    padding: 1px;
+}
+
 #titre {
     margin-top: 30%;
     color: white;
@@ -113,6 +125,7 @@ form {
     color:black;
 }
 
+
 .well {
     text-align: justify;
     box-shadow: 1px 1px 12px black;
@@ -153,7 +166,11 @@ h3 {
 }
 
 .saut_ligne {
-    margin-top: 15%;
+    margin-top: 120px;
+}
+
+.saut_ligne2 {
+    margin-top: 75px;
 }
 
 
@@ -216,14 +233,15 @@ text-align:center;
 color:#1d2a4f;
 }
 
-#nomprofil{
-margin-top:50px;
-}
 
-#infos{
-color:white;
-width: 50%;
-margin: 0 auto; 
+#infos {
+    margin-left: 25px;
+    margin-right: 25px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    color:black;
+    box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;
 }
 
 #errins{
