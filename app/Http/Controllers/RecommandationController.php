@@ -39,7 +39,8 @@ class RecommandationController extends Controller
                                         ->from('seriesgenres')
                                         ->join('seriesseasons', 'seriesgenres.series_id', '=', 'seriesseasons.series_id')
                                         ->join('seasonsepisodes', 'seasonsepisodes.season_id', '=', 'seriesseasons.season_id')
-                                        ->join('usersepisodes', 'seasonsepisodes.episode_id', '=', 'usersepisodes.episode_id')->get();
+                                        ->join('usersepisodes', 'seasonsepisodes.episode_id', '=', 'usersepisodes.episode_id')
+                                        ->where('usersepisodes.user_id', '=', $_SESSION['id'])->get();
                               })
                           ->whereNotIn('seriesgenres.series_id', function($query)
                               {
@@ -52,8 +53,14 @@ class RecommandationController extends Controller
                           ->distinct()->select('series.id', 'series.name', 'series.poster_path', 'series.popularity')->orderBy('popularity', 'desc')->get();
         // on transforme le résultat de la requete en un objet Collection
         $res = collect($infoSeries);
-        // on prend au hasard 18 séries pour faire une page de catalogue
-        $res = $res->random(18);
+        if($res->count() == 0){
+          $res = array();
+        }elseif($res->count() < 18){
+          $res = $res->random($res->count());
+        }else{
+          // on prend au hasard 18 séries pour faire une page de catalogue
+          $res = $res->random(18);
+        }
         return view('recommandation', ['infoSeries' => $res]);
     }
 }

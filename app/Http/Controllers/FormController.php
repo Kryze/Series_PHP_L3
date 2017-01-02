@@ -87,15 +87,15 @@ class FormController extends Controller
       }
 
       // verifie que le mot de passe est renseigné et qu'il fait plus de 6 caractères
-      if(!isset($_POST['pwd']) || strlen($_POST['login']) < 6){
+      if(!isset($_POST['pwd']) || strlen($_POST['pwd']) < 6 || strlen($_POST['pwd']) > 20){
           $valid = false;
-          $message .= ' Le mot de passe doit être renseigné. ';
+          $message .= ' Le mot de passe doit être renseigné et faire entre 6 et 20 caractère. ';
       }else{
         $pwd = $_POST['pwd'];
       }
 
       // vérifie que les mots de passe sont les memes
-      if(!isset($_POST['pwd2']) || $pwd != $_POST['pwd2']){
+      if(!isset($_POST['pwd2']) || $_POST['pwd'] != $_POST['pwd2']){
           $valid = false;
           $message .= ' Les mots de passe doivent correspondre. ';
       }
