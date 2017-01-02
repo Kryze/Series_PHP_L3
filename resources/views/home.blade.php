@@ -84,7 +84,9 @@
                               </div>";
                     }
                 ?>
-                {!! $infoSeries->links() !!}
+                    @if(!isset($pagination))
+                        {!! $infoSeries->render() !!}
+                    @endif
             </div>
 
     </div>
