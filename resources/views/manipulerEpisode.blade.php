@@ -15,5 +15,5 @@ echo "<p> Episode mis à jour </p>
 	  <p class='labelretour'><a class='labelretour' href='$url/fiche_serie?num_serie=$serie->id' >Retour à $serie->name</a></p>";
 	  
 ?>
-	  <p class='labelretour'><a class='labelretour' href="{{ url('home') }}">Retour à la liste des séries</a></p>
+	  <p class='labelretour'><a class='labelretour' href="{{ url('/') }}">Retour à la liste des séries</a></p>
 	  

@@ -4,6 +4,11 @@
     <h1 id="titre2">Nos Séries</h1>
 <div class="container">
     <div class="row">
+            <?php
+                if(isset($res)){
+                    echo $res;
+                }
+            ?>
             <!-- Formulaire de recherche -->
             <div>
                 {!! Form::open(['method' => 'get', 'url' => 'recherche']) !!}
@@ -14,21 +19,21 @@
 
             <div class="trierPar">
                 {!! Form::open(['url' => 'trier', 'method' => 'get']) !!}
-                    {!! Form::label('Adventure') !!}
+                    {!! Form::label('Aventure') !!}
                     {!! Form::checkbox('Adventure', 'Adventure') !!}
-                    {!! Form::label('Fantasy') !!}
+                    {!! Form::label('Fantaisy') !!}
                     {!! Form::checkbox('Fantasy', 'Fantasy') !!}
                     {!! Form::label('Animation') !!}
                     {!! Form::checkbox('Animation', 'Animation') !!}
                     {!! Form::label('Drama') !!}
                     {!! Form::checkbox('Drama', 'Drama') !!}
-                    {!! Form::label('Horror') !!}
+                    {!! Form::label('Horreur') !!}
                     {!! Form::checkbox('Horror', 'Horror') !!}
                     {!! Form::label('Action') !!}
                     {!! Form::checkbox('Action', 'Action') !!}
-                    {!! Form::label('Comedy') !!}
+                    {!! Form::label('Comedie') !!}
                     {!! Form::checkbox('Comedy', 'Comedy') !!}
-                    {!! Form::label('History') !!}
+                    {!! Form::label('Histoire') !!}
                     {!! Form::checkbox('History', 'History') !!}
                     {!! Form::label('Western') !!}
                     {!! Form::checkbox('Western', 'Western') !!}
@@ -36,29 +41,29 @@
                     {!! Form::checkbox('Thriller', 'Thriller') !!}
                     {!! Form::label('Crime') !!}
                     {!! Form::checkbox('Crime', 'Crime') !!}
-                    {!! Form::label('Documentary') !!}
+                    {!! Form::label('Documentaire') !!}
                     {!! Form::checkbox('Documentary', 'Documentary') !!}
                     {!! Form::label('Science Fiction') !!}
                     {!! Form::checkbox('Science Fiction', 'Science Fiction') !!}
-                    {!! Form::label('Mystery') !!}
+                    {!! Form::label('Mistère') !!}
                     {!! Form::checkbox('Mystery', 'Mystery') !!}
-                    {!! Form::label('Music') !!}
+                    {!! Form::label('Musique') !!}
                     {!! Form::checkbox('Music', 'Music') !!}
                     {!! Form::label('Romance') !!}
                     {!! Form::checkbox('Romance', 'Romance') !!}
-                    {!! Form::label('Family') !!}
+                    {!! Form::label('Famille') !!}
                     {!! Form::checkbox('Family', 'Family') !!}
-                    {!! Form::label('War') !!}
+                    {!! Form::label('Guerre') !!}
                     {!! Form::checkbox('War', 'War') !!}
                     {!! Form::label('Action & Aventure') !!}
                     {!! Form::checkbox('Action & Aventure', 'Action & Aventure') !!}
-                    {!! Form::label('Kids') !!}
+                    {!! Form::label('Enfants') !!}
                     {!! Form::checkbox('Kids', 'Kids') !!}
                     {!! Form::label('News') !!}
                     {!! Form::checkbox('News', 'News') !!}
-                    {!! Form::label('Reality') !!}
+                    {!! Form::label('Realité') !!}
                     {!! Form::checkbox('Reality', 'Reality') !!}
-                    {!! Form::label('Sci-Fi & Fantasy') !!}
+                    {!! Form::label('Sci-Fi & Fantaisy') !!}
                     {!! Form::checkbox('Sci-Fi & Fantasy', 'Sci-Fi & Fantasy') !!}
                     {!! Form::label('Soap') !!}
                     {!! Form::checkbox('Soap', 'Soap') !!}
@@ -78,12 +83,10 @@
 									<p class=\"subname\"> $name->name </p>
                               </div>";
                     }
-                    if (isset($paginate)){
-                        echo $paginate;
-                        $infoSeries->links();
-                    }
                 ?>
+                {!! $infoSeries->links() !!}
             </div>
+
     </div>
 </div>
 @endsection
