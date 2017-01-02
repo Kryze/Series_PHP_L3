@@ -20,7 +20,7 @@
 						  <p> Résumé : <span class=ficheserie>$serie->overview</span>
 						  </div>";
                 ?>
-                <p class='labelserie' style="text-align:center"><a href="{{ url('home') }}">Retour à la liste des séries</a></p>
+                <p class='labelserie' style="text-align:center"><a href="{{ url('/') }}">Retour à la liste des séries</a></p>
             </div>
         </div>
     </div>

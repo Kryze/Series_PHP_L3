@@ -12,9 +12,12 @@
 |
 */
 session_start();
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('propre');
-});
+});*/
+
+
+Route::get('/', 'HomeController@index');
 
 Route::get('/inscription/{message?}', 'FormController@index');
 
@@ -24,7 +27,7 @@ Route::post('/auth', 'FormController@auth');
 
 Route::get('/logout', 'FormController@logout');
 
-Route::get('/home', 'HomeController@index');
+Route::get('/trier', 'HomeController@trierPar');
 
 Route::get('/recherche', 'SearchController@index');
 
@@ -41,3 +44,5 @@ Route::group(['prefix' => 'fiche'], function(){
     });
 
 });
+
+Route::get('test/{name}', ['uses' => 'HomeController@trierPar']);

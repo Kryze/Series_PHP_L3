@@ -34,7 +34,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/home') }}">
+                    <a class="navbar-brand" href="{{ url('/') }}">
                         ShowTracker
                     </a>
                 </div>
@@ -42,7 +42,7 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <!--<ul class="nav navbar-nav">
-                        <li><a href="{{ url('/home') }}">Catalogue</a></li>
+                        <li><a href="{{ url('/') }}">Catalogue</a></li>
                     </ul>-->
 
                     <!-- Right Side Of Navbar -->
