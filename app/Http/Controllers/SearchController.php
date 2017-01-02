@@ -35,15 +35,15 @@ class SearchController extends Controller
             // Pour chaque mots clés on adapte la clause WHERE de la requete
             foreach ($keywords as $keyword) {
                 if (strlen($keyword) > 3)
-                    $like .= " original_name LIKE '%" . $keyword . "%' OR";
+                    $like .= " name LIKE \"%" . $keyword . "%\" OR";
             }
             //On supprimer le dernier OR
             if(!empty($like)) {
                 $like = substr($like, 0, strlen($like) - 3);
 
-                $req = "SELECT * FROM series WHERE " . $like . "limit 25";
+                $req = "SELECT * FROM series WHERE " . $like . " limit 25";
 
-
+                echo $req;
                 $state = DB::select($req);
                 // On vérifie si le resultat de la requete est vide ou non
                 if (!empty($state)) {
@@ -63,6 +63,3 @@ class SearchController extends Controller
     }
 
 }
-
-
-
