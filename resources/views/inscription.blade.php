@@ -11,6 +11,7 @@
     @parent
 @endsection
 @section('footer')
+  <!-- Affiche les erreurs eventuels -->
 	<?php echo "<p id=\"errins\">$message</p>"?>
     @parent
 @endsection
