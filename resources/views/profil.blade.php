@@ -19,7 +19,7 @@
     $idancien = 0;
     $idsaisonancien = 999;
     $nbEpisode = 0;
-    $firstEpisode = 999;
+    $firstEpisode = -1;
     foreach ($seasonsepisodes as $season) {
         $state = DB::table('seasons')->join('seriesseasons','seasons.id','=','seriesseasons.season_id')->where('id',$season->season_id)->orderBy('seasons.number', 'asc')->get();
         foreach ($state as $s) {
@@ -29,19 +29,19 @@
                     if($idancien != 0) {
                         echo "<p><span class='text'>$nbEpisode épisode(s) vue(s)</span><p>";
                         echo "</div>";
+                        $nbEpisode=0;
                     }
                     $idsaisonancien = 999;
                     echo "<div class='overflow col-lg-3'>";
                     echo "<h4>$series->name</h4>
                     <img class='block3' src='https://image.tmdb.org/t/p/w154$series->poster_path'/>";
-                    $firstEpisode = 999;
                 }
                 $state4 = DB::table('episodes')->where('id',$season->episode_id)->orderBy('episodes.number', 'asc')->get();
                 foreach ($state4 as $episode) {
-                    if($firstEpisode == 999) {
-                        $firstEpisode = $episode->number;
-                    }
                     if($idsaisonancien != $s->number) {
+                        if($nbEpisode!=0) {
+                            echo "<p><span class='text'>$nbEpisode épisode(s) vue(s)</span><p>";
+                        }
                         echo "<p>Saison $s->number</p>";
                         $idsaisonancien = $s->number;
                     }
