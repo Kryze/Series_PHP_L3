@@ -14,6 +14,9 @@ class ProfilController extends Controller
 
     }
 
+	/**
+	* Cette fonction permet d'afficher les informations du profil utilisateur
+	*/
     public function profil()
     {
 		if(isset($_SESSION["id"])){
@@ -32,30 +35,5 @@ class ProfilController extends Controller
 			echo "Erreur";
 		}
 
-        /*$res = Input::get('keywords');
-
-
-        if($res != "") {
-
-            $keywords = explode(' ', $res);
-
-            $like = "";
-            foreach ($keywords as $keyword) {
-                if (strlen($keyword) > 3)
-                    $like .= " original_name LIKE '%" . $keyword . "%' OR";
-            }
-            $like = substr($like, 0, strlen($like) - 3);
-
-            $req = "SELECT * FROM series WHERE " . $like . "limit 25";
-
-            $state = DB::select($req);
-            dump($state);
-            if(!empty($state)) {
-                return view('search', ['state' => $state]);
-            }else{
-                return "Aucun résultat";
-            }
-        }else{
-            return "veuillez inscrire un kfjlds";*/
         }
  }

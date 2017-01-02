@@ -13,7 +13,9 @@ class FicheController extends Controller
     {
 
     }
-
+	/*
+	* Cette fonction permet d'afficher les informations de la page fiche serie
+	*/
     public function fiche()
     {
 		echo $_GET["num_serie"];
@@ -24,35 +26,15 @@ class FicheController extends Controller
 			if(!empty($state) && !empty($state2)) {
                 return view('fiche_serie', ['serie'=> $state], ['sea'=>$state2]);
 			}
+			else{
+				$infoSeries = DB::table('series')->select('*')->orderBy('popularity', 'desc')->paginate(18);
+				return view('home', ['res' => "Pas de résultat", 'infoSeries' => $infoSeries]);
+			}
 		}
 		else{
-			echo "Erreur";
+			$infoSeries = DB::table('series')->select('*')->orderBy('popularity', 'desc')->paginate(18);
+            return view('home', ['res' => "Pas de résultat", 'infoSeries' => $infoSeries]);
 		}
 
-        /*$res = Input::get('keywords');
-
-
-        if($res != "") {
-
-            $keywords = explode(' ', $res);
-
-            $like = "";
-            foreach ($keywords as $keyword) {
-                if (strlen($keyword) > 3)
-                    $like .= " original_name LIKE '%" . $keyword . "%' OR";
-            }
-            $like = substr($like, 0, strlen($like) - 3);
-
-            $req = "SELECT * FROM series WHERE " . $like . "limit 25";
-
-            $state = DB::select($req);
-            dump($state);
-            if(!empty($state)) {
-                return view('search', ['state' => $state]);
-            }else{
-                return "Aucun résultat";
-            }
-        }else{
-            return "veuillez inscrire un kfjlds";*/
         }
  }

@@ -139,7 +139,9 @@ class FormController extends Controller
         }
 
     }
-
+	/**
+	* Fonction appelé lors de la déconnexion
+	*/
     public function logout()
     {
       $_SESSION = array();
