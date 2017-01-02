@@ -20,8 +20,9 @@
 						  <p> Résumé : <span class=ficheserie>$serie->overview</span>
 						  </div>";
                 ?>
+				 <p class='labelserie' style="text-align:center"><a href="{{ url('home') }}">Retour à la liste des séries</a></p>
                 <div class="center-block">
-                  <h2>Par les mêmes réalisateurs : </h2>
+                  <h2 class="desc">Par les mêmes réalisateurs : </h2>
                     <?php
                         $url = \Illuminate\Support\Facades\URL::to('/');
                         $infoSeries = DB::table('series')
@@ -50,7 +51,6 @@
                         }
                     ?>
                 </div>
-                <p class='labelserie' style="text-align:center"><a href="{{ url('home') }}">Retour à la liste des séries</a></p>
             </div>
         </div>
     </div>
