@@ -26,7 +26,7 @@ class SearchController extends Controller
             foreach ($keywords as $keyword) {
                 if (strlen($keyword) > 2){
                     $like .= " original_name LIKE '%" . $keyword . "%' OR";
-				
+
             $like = substr($like, 0, strlen($like) - 3);
 
             $req = "SELECT * FROM series WHERE " . $like . "limit 25";

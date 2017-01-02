@@ -19,9 +19,9 @@
     </script>
 </head>
 
-<body id="image_Ecran">
+<body id="image_Ecran2">
     <div id="app">
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <nav class="navbar navbar-default navbar-fixed-top nav2">
             <div class="container">
                 <div class="navbar-header">
 
@@ -34,7 +34,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ url('/home') }}">
                         ShowTracker
                     </a>
                 </div>
@@ -42,7 +42,7 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ url('/') }}">Catalogue</a></li>
+                        <li><a href="{{ url('/home') }}">Catalogue</a></li>
                         <li><a href="{{ url('/recommandation') }}">Recommandation</a></li>
                     </ul>
 

@@ -1,6 +1,6 @@
 
 
-@extends('layouts.app')
+@extends('layouts.app2')
 @section('title', 'Fiche Serie')
 @section('content')
     <div class="col-lg-6">
@@ -21,11 +21,43 @@
 						  </div>";
                 ?>
                 <p class='labelserie' style="text-align:center"><a href="{{ url('/') }}">Retour à la liste des séries</a></p>
+                <div class="center-block">
+                  <h2 class="desc">Par les mêmes réalisateurs : </h2>
+                    <?php
+                        $url = \Illuminate\Support\Facades\URL::to('/');
+                        $infoSeries = DB::table('series')
+                                          ->join('seriescreators', 'series.id', '=', 'seriescreators.series_id')
+                                          ->whereIn('seriescreators.creator_id', function($query)
+                                              {
+                                                  $query->select('creator_id')->distinct()
+                                                        ->from('seriescreators')
+                                                        ->join('series', 'series.id', '=', 'seriescreators.series_id')
+                                                        ->where('series.id', '=', $_GET["num_serie"])->get();
+                                              })
+                                          ->whereNotIn('seriescreators.series_id', function($query)
+                                              {
+                                                  $query->select('seriesseasons.series_id')
+                                                        ->from('seriesseasons')
+                                                        ->join('seasonsepisodes', 'seasonsepisodes.season_id', '=', 'seriesseasons.season_id')
+                                                        ->join('usersepisodes', 'seasonsepisodes.episode_id', '=', 'usersepisodes.episode_id')
+                                                        ->where('usersepisodes.user_id', '=', $_SESSION['id'])->get();
+                                              })
+                                          ->where('series.id', '<>', $_GET['num_serie'])
+                                          ->distinct()->select('series.id', 'series.name', 'series.poster_path', 'series.popularity')->orderBy('popularity', 'desc')->get();
+              foreach ($infoSeries as $name){
+                            echo "<div class='serie $name->id')'>
+                                        <a href='$url/fiche_serie?num_serie=$name->id' ><img class='block' src='https://image.tmdb.org/t/p/w154$name->poster_path'/></a>
+                      <p class=\"subname\"> $name->name </p>
+                                  </div>";
+                        }
+                    ?>
+                </div>
             </div>
         </div>
     </div>
         </div>
-    <div class="col-lg-2 separation">
+    <div class="separation col-lg-6">
+    <div class="col-lg-4">
         <div class="resume">
         <h2 id="titre3">Saisons</h2>
 
@@ -33,13 +65,26 @@
         $int = 0;
         $url = \Illuminate\Support\Facades\URL::to('/');
             foreach($sea as $r) {
-                echo "<input id='afficher$int' num='$int' class='btn btn-lg btn-default afficher' style='width:100%' type='submit' name='connexion' value='Saison $r->number'>";
+                $nbEpi = 0;
+                $statetest = DB::table('episodes')->join('seasonsepisodes', 'seasonsepisodes.episode_id', '=', 'episodes.id')->where('season_id',$r->id)->orderBy('episodes.number', 'asc')->get();
+                foreach ($statetest as $episode){
+                    $userepisode = DB::table('usersepisodes')->where('episode_id',$episode->id)->where('user_id',$_SESSION["id"])->count();
+                    if($userepisode==1) {
+                        $nbEpi = $nbEpi + 1;
+                    }
+                }
+                if($nbEpi == $episode->number) {
+                    echo "<input id='afficher$int' num='$int' class='btn btn-lg btn-default afficher Vu' style='width:100%' type='submit' name='connexion' value='Saison $r->number'>";
+                }
+                else {
+                echo "<input id='afficher$int' num='$int' class='btn btn-lg btn-default afficher NoVu' style='width:100%' type='submit' name='connexion' value='Saison $r->number'>";
+                    }
                 $int = $int + 1;
             }
         ?>
             </div>
     </div>
-    <div class="col-lg-4 separation">
+    <div class="col-lg-8 separation">
         <h2 id="titre3">Episodes</h2>
         <?php
         $int = 0;
@@ -77,11 +122,12 @@
                                     echo Form::close();
                         echo "</div>";
                     }
-                
+
                 echo "</div>";
             }
 
         ?>
+        </div>
         </div>
 		<script></script>
 @endsection

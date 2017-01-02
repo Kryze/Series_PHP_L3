@@ -4,6 +4,7 @@ namespace ShowTracker\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 class HomeController extends Controller
 {
@@ -29,5 +30,31 @@ class HomeController extends Controller
         }
         $infoSeries = DB::table('series')->select('*')->orderBy('popularity', 'desc')->paginate(18);
         return view('home', ['infoSeries' => $infoSeries]);
+    }
+
+    public function trierPar(){
+
+        $clauseWhere = "";
+
+        $themes = Input::get();
+
+        if(!empty($themes)) {
+            foreach ($themes as $theme) {
+                $clauseWhere .= "genres.name = '$theme' OR ";
+            }
+
+            $clauseWhere = substr($clauseWhere, 0, strlen($clauseWhere) - 3);
+
+            $infoSeries = DB::select("SELECT *
+                        from genres JOIN seriesgenres on genres.id = seriesgenres.genre_id
+                        join series ON seriesgenres.series_id = series.id 
+                        WHERE $clauseWhere");
+
+            return view('home', ['infoSeries' => $infoSeries]);
+        }else{
+            $infoSeries = DB::table('series')->select('*')->orderBy('popularity', 'desc')->paginate(18);
+            return view('home', ['infoSeries' => $infoSeries]);
+        }
+
     }
 }

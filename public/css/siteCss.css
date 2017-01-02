@@ -9,9 +9,21 @@
     margin: 0;
 }
 
+#image_Ecran2{
+    background: url("../img/blur.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-image:url('../img/blur.jpg');
+    background-size: cover;
+    margin: 0;
+}
+
 .section{
     color:white;
 }
+
 
 .navbar{
     width: 100%;
@@ -20,6 +32,15 @@
     height: 20px;
     z-index: 999;
 }
+
+.nav2 {
+    width: 100%;
+    border-bottom: solid 4px white;
+    box-shadow: 1px 1px 12px white;
+    height: 20px;
+    z-index: 999;
+}
+
 
 #sectitre{
     text-align: center;
@@ -46,6 +67,18 @@ input{
 
 .footer {
     background-color: rgba(0, 0, 255, 0.5);
+}
+
+#profil {
+    border: solid black 2px;
+    width : 75px;
+    padding: 1px;
+}
+
+#profil2 {
+    border: solid black 2px;
+    width : 275px;
+    padding: 1px;
 }
 
 #titre {
@@ -80,6 +113,20 @@ form {
     text-align: right;
 }
 
+.block3 {
+    box-shadow: 1px 1px 12px white;
+    background-color : rgba(255, 255, 255,0.7);
+    border: black solid 3px;
+    border-radius: 10px;
+    color:black;
+    height: 110px;
+    float: left;
+}
+
+.text {
+    font-size: 10px;
+}
+
 
 .block {
     margin-left: 10%;
@@ -91,6 +138,7 @@ form {
     border-radius: 10px;
     color:black;
 }
+
 
 .well {
     text-align: justify;
@@ -132,7 +180,11 @@ h3 {
 }
 
 .saut_ligne {
-    margin-top: 15%;
+    margin-top: 120px;
+}
+
+.saut_ligne2 {
+    margin-top: 75px;
 }
 
 
@@ -154,11 +206,23 @@ h3 {
     box-shadow: 1px 1px 12px white;
 }
 
+a {
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
 .labelserie{
 text-align:justify;
 font-weight:600;
 font-size:18px;
     margin-top: 50px;
+}
+
+.overflow {
+    overflow: hidden;
 }
 
 .ficheserie{
@@ -187,14 +251,15 @@ text-align:center;
 color:#1d2a4f;
 }
 
-#nomprofil{
-margin-top:50px;
-}
 
-#infos{
-color:white;
-width: 50%;
-margin: 0 auto; 
+#infos {
+    margin-left: 25px;
+    margin-right: 25px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    color:black;
+    box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;
 }
 
 #errins{
@@ -231,4 +296,8 @@ margin-left:10px;
 font-weight:600;
 font-size:18px;
 margin-top: 80px;
+}
+
+.desc{
+margin-top:200px;
 }
