@@ -1,4 +1,4 @@
-@extends('layouts.app2')
+@extends('layouts.app')
 @section('title', 'Profil')
 @section('content')
 <h1 id="titre2"> Ce site à été réalisé avec amour par </h1>

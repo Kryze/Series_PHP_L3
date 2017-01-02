@@ -19,9 +19,9 @@
     </script>
 </head>
 
-<body id="image_Ecran">
+<body id="image_Ecran2">
     <div id="app">
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <nav class="navbar navbar-default navbar-fixed-top nav2">
             <div class="container">
                 <div class="navbar-header">
 
@@ -44,6 +44,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{{ url('/') }}">Catalogue</a></li>
                         <li><a href="{{ url('/recommandation') }}">Recommandation</a></li>
+						<li><a href="{{ url('/aboutus') }}">A propos</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

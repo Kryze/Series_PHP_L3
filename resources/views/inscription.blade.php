@@ -1,4 +1,4 @@
-@extends('layouts.test')
+@extends('layouts.notlogged')
 @section('head')
     @parent
 @endsection
