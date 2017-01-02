@@ -22,7 +22,7 @@
     foreach ($seasonsepisodes as $season) {
         $state = DB::table('seasons')->join('seriesseasons','seasons.id','=','seriesseasons.season_id')->where('id',$season->season_id)->orderBy('seasons.number', 'asc')->get();
         foreach ($state as $s) {
-            $state3 = DB::table('series')->where('id',$s->series_id)->get();
+            $state3 = DB::table('series')->where('id',$s->series_id)->orderBy('series.name', 'asc')->get();
             foreach ($state3 as $series) {
                 if($idancien != $series->id) {
                     if($idancien != 0) {
@@ -31,7 +31,7 @@
                         $nbEpisode=0;
                     }
                     $idsaisonancien = 999;
-                    echo "<div class='overflow col-lg-3'>";
+                    echo "<div class='overflow col-lg-4'>";
                     echo "<h4>$series->name</h4>
                     <img class='block3' src='https://image.tmdb.org/t/p/w154$series->poster_path'/>";
                 }
