@@ -44,7 +44,8 @@ class RecommandationController extends Controller
                                   $query->select('seriesseasons.series_id')
                                         ->from('seriesseasons')
                                         ->join('seasonsepisodes', 'seasonsepisodes.season_id', '=', 'seriesseasons.season_id')
-                                        ->join('usersepisodes', 'seasonsepisodes.episode_id', '=', 'usersepisodes.episode_id')->get();
+                                        ->join('usersepisodes', 'seasonsepisodes.episode_id', '=', 'usersepisodes.episode_id')
+                                        ->where('usersepisodes.user_id', '=', $_SESSION['id'])->get();
                               })
                           ->distinct()->select('series.id', 'series.name', 'series.poster_path', 'series.popularity')->orderBy('popularity', 'desc')->get();
         $res = collect($infoSeries);
