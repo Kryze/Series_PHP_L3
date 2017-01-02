@@ -13,6 +13,7 @@
 @show
 <body id="image_Ecran">
 @section('sidebar')
+    <!-- Bar de navigation du site tant que l'utilisateur n'est pas connecté -->
     <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -36,6 +37,7 @@
 @show
 
 @section('bodyaccueil')
+    <!-- Page d'accueil du site -->
     <div class="section">
         <div class="container">
             <div class="row">
@@ -63,6 +65,7 @@
             @section('message')
             @show
             <div class="row">
+                <!-- Panel pour la connection -->
                 <div class="col-lg-4 col-md-4 block">
                     <h2>Connexion</h2>
                     <form method="post" action="./auth">
@@ -72,6 +75,7 @@
                         <input name="_token" type="hidden" value="{{ csrf_token() }}">
                     </form>
                 </div>
+                <!-- Panel pour l'inscription -->
                 <div class="col-lg-4 col-md-4 block">
                     <h2>Inscription</h2>
                     <form method="post" action="./confirm">
