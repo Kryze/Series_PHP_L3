@@ -34,14 +34,6 @@
                                                         ->join('series', 'series.id', '=', 'seriescreators.series_id')
                                                         ->where('series.id', '=', $_GET["num_serie"])->get();
                                               })
-                                          ->whereNotIn('seriescreators.series_id', function($query)
-                                              {
-                                                  $query->select('seriesseasons.series_id')
-                                                        ->from('seriesseasons')
-                                                        ->join('seasonsepisodes', 'seasonsepisodes.season_id', '=', 'seriesseasons.season_id')
-                                                        ->join('usersepisodes', 'seasonsepisodes.episode_id', '=', 'usersepisodes.episode_id')
-                                                        ->where('usersepisodes.user_id', '=', $_SESSION['id'])->get();
-                                              })
                                           ->where('series.id', '<>', $_GET['num_serie'])
                                           ->distinct()->select('series.id', 'series.name', 'series.poster_path', 'series.popularity')->orderBy('popularity', 'desc')->get();
               foreach ($infoSeries as $name){
