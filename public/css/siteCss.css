@@ -99,6 +99,10 @@ input{
     display: none;
 }
 
+label {
+    color: white;
+}
+
 
 #titre3 {
     margin-top: 80px;
