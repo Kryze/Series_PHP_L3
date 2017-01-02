@@ -39,12 +39,4 @@ Route::get('/episode', 'EpisodeController@episode');
 
 Route::get('/fiche_serie', 'FicheController@fiche');
 
-Route::group(['prefix' => 'fiche'], function(){
-
-    Route::get('/{id}', function($id){
-        return view('ficheSerie', $id);
-    });
-
-});
-
 Route::get('test/{name}', ['uses' => 'HomeController@trierPar']);

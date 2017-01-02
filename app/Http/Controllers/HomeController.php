@@ -22,16 +22,23 @@ class HomeController extends Controller
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
+     *
+     * On vérifie que l'utilisateur c'est deja connecté au site
+     * Si oui la page principal est affiché sinon c'est la page d'acceuil pour les nouveaux utilisateurs
      */
     public function index()
     {
         if(!isset($_SESSION['id'])){
-          return view('inscription', ['message' => 'Vous devez d\'abord vous connecter ou vous inscrire']);
+            return view('propre');
+          //return view('inscription', ['message' => 'Vous devez d\'abord vous connecter ou vous inscrire']);
         }
         $infoSeries = DB::table('series')->select('*')->orderBy('popularity', 'desc')->paginate(18);
         return view('home', ['infoSeries' => $infoSeries]);
     }
 
+    /*
+     * 
+     */
     public function trierPar(){
 
         $clauseWhere = "";
@@ -55,6 +62,5 @@ class HomeController extends Controller
             $infoSeries = DB::table('series')->select('*')->orderBy('popularity', 'desc')->paginate(18);
             return view('home', ['infoSeries' => $infoSeries]);
         }
-
     }
 }
