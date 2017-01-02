@@ -44,6 +44,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{{ url('/') }}">Catalogue</a></li>
                         <li><a href="{{ url('/recommandation') }}">Recommandation</a></li>
+						<li><a href="{{ url('/aboutus') }}">A propos</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

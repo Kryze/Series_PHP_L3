@@ -16,6 +16,9 @@ session_start();
     return view('propre');
 });*/
 
+Route::get('/aboutus', function () {
+    return view('aboutus');
+});
 
 Route::get('/', 'HomeController@index');
 
