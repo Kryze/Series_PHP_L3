@@ -26,7 +26,7 @@
             foreach ($state3 as $series) {
                 if($idancien != $series->id) {
                     if($idancien != 0) {
-                        echo "<p><span class='text'>$nbEpisode épisode(s) vue(s)</span><p>";
+                        echo "<p class='texte'>$nbEpisode épisode(s) vue(s)</p>";
                         echo "</div>";
                         $nbEpisode=0;
                     }
@@ -39,10 +39,10 @@
                 foreach ($state4 as $episode) {
                     if($idsaisonancien != $s->number) {
                         if($nbEpisode!=0) {
-                            echo "<p><span class='text'>$nbEpisode épisode(s) vue(s)</span><p>";
+                            echo "<p class='texte'>$nbEpisode épisode(s) vue(s)</p>";
                         }
                         $nbEpisode = 0;
-                        echo "<p>Saison $s->number</p>";
+                        echo "<p class='texte'>Saison $s->number</p>";
                         $idsaisonancien = $s->number;
                     }
                     $nbEpisode = $nbEpisode + 1;
@@ -51,7 +51,7 @@
                 $idancien = $series->id;
         }
     }
-    echo "<p><span class='text'>$nbEpisode épisode(s) vue(s)</span><p>";
+    echo "<p class='texte'>$nbEpisode épisode(s) vue(s)</p>";
     echo"
 	</div>
 </div>";
