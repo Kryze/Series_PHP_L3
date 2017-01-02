@@ -49,7 +49,6 @@
                 </div>
             </div>
             <div class="row">
-                <img class="block5" src='https://s-media-cache-ak0.pinimg.com/originals/e2/b4/18/e2b418c1ac7cfbccd3acd1dc2692bf47.jpg'/>
                 <div class="saut_ligne">
                     <h3>Suivez votre progression en temps reel grâce à ShowTracker</h3>
                     <form method="get" action="{{ url('inscription') }}">
