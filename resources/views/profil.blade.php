@@ -19,11 +19,10 @@
     $idancien = 0;
     $idsaisonancien = 999;
     $nbEpisode = 0;
-    $firstEpisode = -1;
     foreach ($seasonsepisodes as $season) {
         $state = DB::table('seasons')->join('seriesseasons','seasons.id','=','seriesseasons.season_id')->where('id',$season->season_id)->orderBy('seasons.number', 'asc')->get();
         foreach ($state as $s) {
-            $state3 = DB::table('series')->where('id',$s->series_id)->distinct()->get();
+            $state3 = DB::table('series')->where('id',$s->series_id)->get();
             foreach ($state3 as $series) {
                 if($idancien != $series->id) {
                     if($idancien != 0) {
@@ -42,10 +41,11 @@
                         if($nbEpisode!=0) {
                             echo "<p><span class='text'>$nbEpisode épisode(s) vue(s)</span><p>";
                         }
+                        $nbEpisode = 0;
                         echo "<p>Saison $s->number</p>";
                         $idsaisonancien = $s->number;
                     }
-                    $nbEpisode = $episode->number;
+                    $nbEpisode = $nbEpisode + 1;
                 }
             }
                 $idancien = $series->id;
