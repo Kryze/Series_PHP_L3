@@ -1,5 +1,7 @@
 # ShowTracker
 
+![accueil](https://cloud.githubusercontent.com/assets/18222418/21811178/fe3b72b8-d74e-11e6-876f-17d89a33f47e.png)
+
 Projet de programmation web/web dynamique de L3 MIAGE
 
 Réalisation d'un site de recherche et recommandation de séries télévisées
