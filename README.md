@@ -6,43 +6,36 @@ Réalisation d'un site de recherche et recommandation de séries télévisées
 
 # Fonctionnalités
 
-Le site permet de rechercher des séries et de consulter leurs  informations.
+- Le site permet de rechercher des séries et de consulter leurs  informations.
 
-Le  site  permet de  se  connecter  et d’indiquer les épisodesdes séries que l’on a visionnés.
+- Le  site  permet de  se  connecter  et d’indiquer les épisodes des séries que l’on a visionnés.
 
-Le site permet de recevoir des recommandations.
+- Le site permet de recevoir des recommandations.
 
 # Installation
 
-## Avant de suivre le tutoriel il faut
+## Pré-requis
 
-  Réinstaller composer en version php7.0.10
+ 1. Réinstaller composer en version php7.0.10
 
-  Allez dans le dossier www\Series_PHP_L3
+ 2. Allez dans le dossier www\Series_PHP_L3
   
-  Ajouter C:\wamp64\bin\php\php7.0.10 a la variable PATH d'environnement (Si c'est pas wamp le dossier ou se trouve php7.0.10)
+ 3. Ajouter C:\wamp64\bin\php\php7.0.10 a la variable PATH d'environnement (Si c'est pas wamp le dossier ou se trouve php7.0.10)
 
 ## Tutoriel
 
-J'utilise wampserver64 et github desktop (pour pull le projet)
+Ce tutoriel utilise wampserver64 et github desktop (pour pull le projet)
 
 Démarche a suivre : 
 
-Récuperer le projet
-Supprimer composer.lock
-composer install
+1. Récuperer le projet
+2. Supprimer composer.lock
+3. Utiliser composer install
+4. Modifier le fichier `HtmlServiceProvider` et remplacer les 2 occurences de `bindshared` en `singleton`
+5. Renommer avec la console `.env.example` en `.env` (Sous windows : `move .env.example .env`) (Sous linux `mv .env.example .env`)
+6. Utiliser les commandes `php artisan key:generate` et `php artisan config:clear`
 
-IL FAUT ENSUITE CHERCHER LE FICHIER HtmlServiceProvider et remplacer les 2 occurences de "bindshared" en "singleton" ( les mots entre guillemets )
+Pour la base de données il faut ajouter :
 
-Renommer en console .env.example en .env (Sous windows move .env.example .env) (Sous linux mv .env.example .env)
-
-Utiliser les commandes php artisan key:generate
-
-php artisan config:clear
-
-NORMALEMENT CA MARCHE ENSUITE
-
-// Pour le fonctionnement du salage
-
-Il faut ajouter une colonne salt à la table users (varchar(10))
-Et changer la taille max de password a minimum 120
+- Une colonne salt à la table users (varchar(10))
+- Changer la taille max de password a au moins 120
